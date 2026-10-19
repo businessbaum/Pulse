@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358634552f3792644803b6e04be8aebe, type: 3}
+  m_Name: Drops
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.DropPool
+  entries:
+  - kind: 0
+    chance: 0.07
+    amount: 12
+    mesh: {fileID: -3676728085192693422, guid: 085ce5823de72be4f9cbbd2def9e6dfa, type: 3}
+    material: {fileID: 2100000, guid: 48fe9378268af8149b43fbed4c9f6bf5, type: 2}
+    fromMiniBoss: 2
+    fromBoss: 4
+    fromWarden: 6
+  - kind: 1
+    chance: 0.75
+    amount: 1
+    mesh: {fileID: -6273032110796455833, guid: 8b81750ec42a6cf44b42b5250a2d0824, type: 3}
+    material: {fileID: 2100000, guid: 3b68767c46e7c304989fd1f730083eb0, type: 2}
+    fromMiniBoss: 3
+    fromBoss: 5
+    fromWarden: 10
+  - kind: 1
+    chance: 0
+    amount: 5
+    mesh: {fileID: -6273032110796455833, guid: 8b81750ec42a6cf44b42b5250a2d0824, type: 3}
+    material: {fileID: 2100000, guid: 3b68767c46e7c304989fd1f730083eb0, type: 2}
+    fromMiniBoss: 2
+    fromBoss: 6
+    fromWarden: 30
+  - kind: 2
+    chance: 0.015
+    amount: 0
+    mesh: {fileID: -1809716935206404049, guid: c8e5a9fc2343a7f4f93b02a222353296, type: 3}
+    material: {fileID: 2100000, guid: d89d07cd5307a71429ca7fdeb242c5f6, type: 2}
+    fromMiniBoss: 1
+    fromBoss: 1
+    fromWarden: 2
+  - kind: 3
+    chance: 0
+    amount: 0
+    mesh: {fileID: 6513811078602690441, guid: 76c4354576de28048948021708e5def0, type: 3}
+    material: {fileID: 2100000, guid: 3b68767c46e7c304989fd1f730083eb0, type: 2}
+    fromMiniBoss: 0
+    fromBoss: 1
+    fromWarden: 0

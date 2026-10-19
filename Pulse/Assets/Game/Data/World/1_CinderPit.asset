@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5310e350c31e6724b8c84b98ac093f32, type: 3}
+  m_Name: 1_CinderPit
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.DungeonDef
+  displayName: Cinder Pit
+  map: '#########################
+
+    #########.......#########
+
+    #########...s...#########
+
+    #########.......#########
+
+    ####.................####
+
+    ####......o...o......####
+
+    ####.................####
+
+    #.......................#
+
+    #..s......v...v......s..#
+
+    #...........@...........#
+
+    #..s......v...v......s..#
+
+    #.......................#
+
+    ####.................####
+
+    ####......o...o......####
+
+    ####.................####
+
+    #########.......#########
+
+    #########...s...#########
+
+    #########.......#########
+
+    #########################'
+  arenaRadius: 22
+  waves:
+  - grunts: 10
+    brutes: 0
+  - grunts: 16
+    brutes: 0
+  - grunts: 14
+    brutes: 2
+  reward: 40
+  finds:
+  - {fileID: 11400000, guid: 543b75c0c388b0a4480ca4a22e303484, type: 2}
+  - {fileID: 11400000, guid: adec97973bba2c84189f589a6a7d4efa, type: 2}
+  boss: {fileID: 0}
+  bossTitle: 
+  bossSecondName: 
+  landmark: {fileID: 0}
+  landmarkStone: {fileID: 0}
+  landmarkTrim: {fileID: 0}
+  landmarkFires: []
+  landmarkDepth: 0
+  landmarkRadius: 0

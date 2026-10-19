@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: Kiln
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Kiln
+  hp: 2600
+  speed: 3.2
+  radius: 2.3
+  armor: 1
+  contactDamage: 11
+  behaviour: 10
+  packSize: 1
+  trait: Pounds the ground, rams across the arena and lobs fire. Every attack shows first.
+  bossTrait: Hotter and faster. Fire that follows the machine, and the floor erupts in lines.
+  miniBossName: 
+  bossName: 
+  windUp: 1
+  drops: {fileID: 0}
+  mesh: {fileID: 1929421875290160526, guid: c812970d69028054e814933cc7fbf585, type: 3}
+  height: 5.6
+  body: {fileID: 2100000, guid: 9fa9c5bf9a3f990458106475964a0682, type: 2}
+  plate: {fileID: 2100000, guid: 4bd8222313cbee64abaa4b53d5625f11, type: 2}
+  glow: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+  wobble: 0
+  legMesh: {fileID: -9007585024235758050, guid: 3bd693db1950a0e4086e61e608548096, type: 3}
+  legSpacing: 1
+  hipHeight: 1.45

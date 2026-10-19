@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd51ffd1e60f472409f1a1b083028a35, type: 3}
+  m_Name: CinderFlats
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.WorldDef
+  halfSize: 120
+  entrances:
+  - dungeon: {fileID: 11400000, guid: be5f24724d5b2fd449fe00a0b4726af3, type: 2}
+    position: {x: 0, y: 0, z: 40}
+    requires: -1
+  - dungeon: {fileID: 11400000, guid: 355105b5f3f514047b231cdabcead0ed, type: 2}
+    position: {x: -70, y: 0, z: -35}
+    requires: 0
+  - dungeon: {fileID: 11400000, guid: c24a487ec5bf84b41a7f0971e17e15a3, type: 2}
+    position: {x: 80, y: 0, z: -75}
+    requires: 1
+  - dungeon: {fileID: 11400000, guid: 28b1c29a79b3b3d469d23eae04c8c43d, type: 2}
+    position: {x: 30, y: 0, z: 76}
+    requires: -1
+  spawnPerSecond: 1.2
+  maxEnemies: 45
+  spawnDistance: 28
+  despawnDistance: 60
+  bruteChance: 0.1
+  miniBossChance: 0.03
+  bossChance: 0.008
+  maxMiniBosses: 2
+  maxBosses: 1
+  stormDepth: 24
+  stormDamageAtEdge: 3
+  stormDamageAtEnd: 40
+  aggroRange: 14

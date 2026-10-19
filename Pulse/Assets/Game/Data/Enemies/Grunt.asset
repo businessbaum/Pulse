@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: Grunt
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Grunt
+  hp: 20
+  speed: 3.6
+  radius: 0.5
+  armor: 0
+  contactDamage: 4
+  mesh: {fileID: -3761430238116976823, guid: e2e8ef9eca273e34c8bbea0455323b2f, type: 3}
+  legMesh: {fileID: -2155325938569704002, guid: 87324f294278ab140b353677fa226c07, type: 3}
+  legSpacing: 0.17
+  hipHeight: 0.42

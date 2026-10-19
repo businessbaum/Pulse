@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb79c61ca5cae2d4aaae5888846940ed, type: 3}
+  m_Name: MineLayer
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.WeaponDef
+  displayName: Mine Layer
+  description: Lays mines that wait for something to walk onto them.
+  powerCost: 2
+  mesh: {fileID: 8794600244294130090, guid: 09818481a2de8d144a189abda65656bd, type: 3}
+  delivery: 3
+  state: 0
+  damage: 38
+  cooldown: 1.5
+  range: 15
+  projectileSpeed: 30
+  pierce: 0
+  coneHalfAngle: 18
+  anchoredToRig: 0
+  radius: 2.5
+  zoneDuration: 22
+  shell: 0

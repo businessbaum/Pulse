@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15ef17de518f254da533ddfb5c18e76, type: 3}
+  m_Name: Wheels
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.DriveDef
+  displayName: Wheels
+  description: Four wheels. Quick in a straight line, but the machine has to roll to turn.
+  speed: 7.5
+  acceleration: 18
+  turnRate: 85
+  turnsOnSpot: 0
+  nitroBoost: 1.7
+  nitroSeconds: 2.5
+  nitroRecharge: 10

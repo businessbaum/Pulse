@@ -1,0 +1,11 @@
+{
+    "name": "Pulse.Editor",
+    "rootNamespace": "Pulse.EditorTools",
+    "references": [
+        "Pulse.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": true
+}

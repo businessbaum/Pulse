@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb79c61ca5cae2d4aaae5888846940ed, type: 3}
+  m_Name: Autocannon
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.WeaponDef
+  displayName: Autocannon
+  description: Fast kinetic shots.
+  powerCost: 2
+  mesh: {fileID: 5464320140737804625, guid: 405c15bd687d3a94ab7e3551131fd3a1, type: 3}
+  delivery: 0
+  state: 0
+  damage: 8
+  cooldown: 0.25
+  range: 16
+  projectileSpeed: 34
+  coneHalfAngle: 18
+  anchoredToRig: 0
+  radius: 3
+  zoneDuration: 5

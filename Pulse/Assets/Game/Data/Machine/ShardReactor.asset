@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033bac6158cc71d4dbc25545ce3b3280, type: 3}
+  m_Name: ShardReactor
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.ReactorDef
+  displayName: Shard Reactor
+  description: A splinter of the Pulse in a cage. Enough Power for a light machine.
+  powerCap: 10

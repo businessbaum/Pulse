@@ -1,0 +1,516 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf2c4a0b902f8b4d87ba09e4a04e1b4, type: 3}
+  m_Name: Scenery
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.SceneryDef
+  version: 4
+  seed: 7
+  biomes:
+  - name: Cinder Flats
+    ground: {r: 0.115, g: 0.11, b: 0.115, a: 1}
+    groundAlt: {r: 0.17, g: 0.135, b: 0.12, a: 1}
+    groundSpot: {r: 0.4, g: 0.15, b: 0.07, a: 1}
+    ambient: {r: 0.37, g: 0.33, b: 0.35, a: 1}
+    glow: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+    hazard: 1
+    props:
+    - name: Lava crack
+      mesh: {fileID: 7916926548031196647, guid: cf4fff34c9fe54e4dad7871d98a80baa, type: 3}
+      material: {fileID: 2100000, guid: 6746a05d657fb1e4ba7840523e1a8a1e, type: 2}
+      accent: {fileID: 0}
+      count: 46
+      minScale: 0.8
+      maxScale: 1.9
+      blockRadius: 0
+      flat: 1
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Boulder
+      mesh: {fileID: 2649995349246831342, guid: 0374843be8b4cc44b867c18d152441a6, type: 3}
+      material: {fileID: 2100000, guid: 6746a05d657fb1e4ba7840523e1a8a1e, type: 2}
+      accent: {fileID: 0}
+      count: 46
+      minScale: 0.8
+      maxScale: 2
+      blockRadius: 0.95
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Stone
+      mesh: {fileID: 1617438343633297580, guid: 6d7abae88fbb25348bb062f6c8e936c2, type: 3}
+      material: {fileID: 2100000, guid: 6746a05d657fb1e4ba7840523e1a8a1e, type: 2}
+      accent: {fileID: 0}
+      count: 80
+      minScale: 0.4
+      maxScale: 0.8
+      blockRadius: 0
+      flat: 0
+      tilt: 20
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Pebbles
+      mesh: {fileID: 7021410137308696726, guid: d0158239f6ec5d749b363590eadff994, type: 3}
+      material: {fileID: 2100000, guid: 6746a05d657fb1e4ba7840523e1a8a1e, type: 2}
+      accent: {fileID: 0}
+      count: 300
+      minScale: 0.6
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 0
+      hard: 0
+    - name: Burnt grass
+      mesh: {fileID: -2035342429536354893, guid: fd099e56da222d548b1b47ba383948e2, type: 3}
+      material: {fileID: 2100000, guid: b14b3f9a15df8d74d83b4f370b0ce45f, type: 2}
+      accent: {fileID: 2100000, guid: b14b3f9a15df8d74d83b4f370b0ce45f, type: 2}
+      count: 220
+      minScale: 0.7
+      maxScale: 1.4
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 1
+      hard: 0
+    - name: Dry bush
+      mesh: {fileID: 5958362384829529401, guid: c3dcc91a674c0e140a8f715e8069bf5e, type: 3}
+      material: {fileID: 2100000, guid: b14b3f9a15df8d74d83b4f370b0ce45f, type: 2}
+      accent: {fileID: 2100000, guid: fdf083432eac76b4da758da146972deb, type: 2}
+      count: 180
+      minScale: 0.7
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Charred tree
+      mesh: {fileID: 4546797203811134506, guid: 1ce58360b2401ee419c90a8caa3e86b5, type: 3}
+      material: {fileID: 2100000, guid: b14b3f9a15df8d74d83b4f370b0ce45f, type: 2}
+      accent: {fileID: 2100000, guid: b14b3f9a15df8d74d83b4f370b0ce45f, type: 2}
+      count: 54
+      minScale: 0.8
+      maxScale: 1.5
+      blockRadius: 0.35
+      flat: 0
+      tilt: 6
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Ember vent
+      mesh: {fileID: -5096207464603991187, guid: 7b77a41af40545941b5ef9d79f8c268b, type: 3}
+      material: {fileID: 2100000, guid: 6746a05d657fb1e4ba7840523e1a8a1e, type: 2}
+      accent: {fileID: 0}
+      count: 18
+      minScale: 0.8
+      maxScale: 1.3
+      blockRadius: 0.95
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Husk
+      mesh: {fileID: -3288555604101446211, guid: b9cd6870988cbb74f9d9fb11883f6e61, type: 3}
+      material: {fileID: 2100000, guid: 4bd8222313cbee64abaa4b53d5625f11, type: 2}
+      accent: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      count: 10
+      minScale: 0.9
+      maxScale: 1.25
+      blockRadius: 1.7
+      flat: 0
+      tilt: 5
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Pylon
+      mesh: {fileID: 6291026919435153079, guid: 6720fd93a69259c4e9a85f7e0670d1e5, type: 3}
+      material: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      accent: {fileID: 2100000, guid: 4bd8222313cbee64abaa4b53d5625f11, type: 2}
+      count: 7
+      minScale: 1
+      maxScale: 1.3
+      blockRadius: 0.5
+      flat: 0
+      tilt: 4
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    species:
+    - {fileID: 11400000, guid: c3b774707fc30414fba47ad2025499cd, type: 2}
+    - {fileID: 11400000, guid: 6a4dd396b976b2b45a5c2bf4b56c1f2c, type: 2}
+    - {fileID: 11400000, guid: 2e24f1eab7e7df646962de3efa4b685f, type: 2}
+  - name: Frostline
+    ground: {r: 0.4, g: 0.45, b: 0.53, a: 1}
+    groundAlt: {r: 0.5, g: 0.55, b: 0.62, a: 1}
+    groundSpot: {r: 0.27, g: 0.42, b: 0.55, a: 1}
+    ambient: {r: 0.4, g: 0.46, b: 0.56, a: 1}
+    glow: {fileID: 2100000, guid: 8021f76ad507fec48a6877892054af53, type: 2}
+    hazard: 3
+    props:
+    - name: Snow drift
+      mesh: {fileID: -5759019142038857915, guid: 05fde7498dcae9e42b2309de62625be4, type: 3}
+      material: {fileID: 2100000, guid: 02984444e184987419a4534cd463ccf3, type: 2}
+      accent: {fileID: 0}
+      count: 44
+      minScale: 0.8
+      maxScale: 1.9
+      blockRadius: 1.45
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Ice shards
+      mesh: {fileID: -5264112976291423285, guid: 3ac570ce13010494a863bf1f08c51594, type: 3}
+      material: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      accent: {fileID: 2100000, guid: 7b922aebef744c44c92f8b8743f9f746, type: 2}
+      count: 44
+      minScale: 0.7
+      maxScale: 1.6
+      blockRadius: 0.75
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Frozen pine
+      mesh: {fileID: 4847661574661517335, guid: 821f33f96a4552e4fa379b3593fa7439, type: 3}
+      material: {fileID: 2100000, guid: 02984444e184987419a4534cd463ccf3, type: 2}
+      accent: {fileID: 2100000, guid: 6ff910829dc2e19428c66740a396307c, type: 2}
+      count: 62
+      minScale: 0.8
+      maxScale: 1.6
+      blockRadius: 0.35
+      flat: 0
+      tilt: 4
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Ice boulder
+      mesh: {fileID: 1986238817047421988, guid: b061193eed645ce4f8be2d7adea3123e, type: 3}
+      material: {fileID: 2100000, guid: 02984444e184987419a4534cd463ccf3, type: 2}
+      accent: {fileID: 2100000, guid: 7b922aebef744c44c92f8b8743f9f746, type: 2}
+      count: 36
+      minScale: 0.7
+      maxScale: 1.6
+      blockRadius: 0.85
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Stone
+      mesh: {fileID: 1617438343633297580, guid: 6d7abae88fbb25348bb062f6c8e936c2, type: 3}
+      material: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      accent: {fileID: 0}
+      count: 70
+      minScale: 0.4
+      maxScale: 0.8
+      blockRadius: 0
+      flat: 0
+      tilt: 20
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Pebbles
+      mesh: {fileID: 7021410137308696726, guid: d0158239f6ec5d749b363590eadff994, type: 3}
+      material: {fileID: 2100000, guid: 02984444e184987419a4534cd463ccf3, type: 2}
+      accent: {fileID: 0}
+      count: 260
+      minScale: 0.6
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 0
+      hard: 0
+    - name: Ice splinters
+      mesh: {fileID: 945698924588944633, guid: 9d10cf7c57fa66045a5e7e3aea3c8479, type: 3}
+      material: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      accent: {fileID: 2100000, guid: 7b922aebef744c44c92f8b8743f9f746, type: 2}
+      count: 200
+      minScale: 0.7
+      maxScale: 1.6
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 1
+      hard: 0
+    - name: Frost bush
+      mesh: {fileID: 5958362384829529401, guid: c3dcc91a674c0e140a8f715e8069bf5e, type: 3}
+      material: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      accent: {fileID: 2100000, guid: 861d6c19b43bd2340b857ca497cacd52, type: 2}
+      count: 180
+      minScale: 0.7
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Husk
+      mesh: {fileID: -3288555604101446211, guid: b9cd6870988cbb74f9d9fb11883f6e61, type: 3}
+      material: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      accent: {fileID: 2100000, guid: 02984444e184987419a4534cd463ccf3, type: 2}
+      count: 8
+      minScale: 0.9
+      maxScale: 1.25
+      blockRadius: 1.7
+      flat: 0
+      tilt: 5
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Pylon
+      mesh: {fileID: 6291026919435153079, guid: 6720fd93a69259c4e9a85f7e0670d1e5, type: 3}
+      material: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      accent: {fileID: 2100000, guid: 0976c599e70f44a4faddbef1f6aa5974, type: 2}
+      count: 6
+      minScale: 1
+      maxScale: 1.3
+      blockRadius: 0.5
+      flat: 0
+      tilt: 4
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    species:
+    - {fileID: 11400000, guid: 94ad4c7ccfc68dd4b8d28ec9e4514453, type: 2}
+    - {fileID: 11400000, guid: 3011589bd65b4aa408894bc12263b064, type: 2}
+    - {fileID: 11400000, guid: c540e7e5f88f87747ad1ce9aec10ab96, type: 2}
+  - name: Tar Marsh
+    ground: {r: 0.09, g: 0.085, b: 0.12, a: 1}
+    groundAlt: {r: 0.13, g: 0.14, b: 0.11, a: 1}
+    groundSpot: {r: 0.2, g: 0.12, b: 0.3, a: 1}
+    ambient: {r: 0.3, g: 0.3, b: 0.38, a: 1}
+    glow: {fileID: 2100000, guid: 2090efffde50d9f4bb737773877b3aef, type: 2}
+    hazard: 4
+    props:
+    - name: Tar pool
+      mesh: {fileID: 2583155098630979591, guid: b1823997a6f92954b95369e930ffda59, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 0}
+      count: 50
+      minScale: 1
+      maxScale: 2.4
+      blockRadius: 0
+      flat: 1
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Derrick
+      mesh: {fileID: -5509495730405583237, guid: 72857b40f86e5fe4cb1d4c4e63697e0d, type: 3}
+      material: {fileID: 2100000, guid: 7965874aa0261d94cbfd5d5060bd95bb, type: 2}
+      accent: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      count: 13
+      minScale: 0.9
+      maxScale: 1.2
+      blockRadius: 1.3
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Pipes
+      mesh: {fileID: -8248688006421560813, guid: 7b74363508896f748ab2ee3c6822c21d, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 2100000, guid: 7965874aa0261d94cbfd5d5060bd95bb, type: 2}
+      count: 28
+      minScale: 0.8
+      maxScale: 1.3
+      blockRadius: 0.75
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Reeds
+      mesh: {fileID: 3475325876421298756, guid: 79b322c98eecede43b2345a5aa985270, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 2100000, guid: 97bd97d3d6de7064789e23bf65dfe1ec, type: 2}
+      count: 190
+      minScale: 0.7
+      maxScale: 1.4
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 1
+      hard: 0
+    - name: Marsh grass
+      mesh: {fileID: -2035342429536354893, guid: fd099e56da222d548b1b47ba383948e2, type: 3}
+      material: {fileID: 2100000, guid: 97bd97d3d6de7064789e23bf65dfe1ec, type: 2}
+      accent: {fileID: 2100000, guid: 97bd97d3d6de7064789e23bf65dfe1ec, type: 2}
+      count: 200
+      minScale: 0.8
+      maxScale: 1.6
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 1
+      hard: 0
+    - name: Marsh bush
+      mesh: {fileID: 5958362384829529401, guid: c3dcc91a674c0e140a8f715e8069bf5e, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 2100000, guid: 4ade09c1c8dd9ff4eb8554625deed971, type: 2}
+      count: 180
+      minScale: 0.7
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Boulder
+      mesh: {fileID: 2649995349246831342, guid: 0374843be8b4cc44b867c18d152441a6, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 0}
+      count: 32
+      minScale: 0.7
+      maxScale: 1.8
+      blockRadius: 0.95
+      flat: 0
+      tilt: 0
+      noShadow: 0
+      crushable: 0
+      hard: 1
+    - name: Stone
+      mesh: {fileID: 1617438343633297580, guid: 6d7abae88fbb25348bb062f6c8e936c2, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 0}
+      count: 70
+      minScale: 0.4
+      maxScale: 0.8
+      blockRadius: 0
+      flat: 0
+      tilt: 20
+      noShadow: 0
+      crushable: 1
+      hard: 0
+    - name: Pebbles
+      mesh: {fileID: 7021410137308696726, guid: d0158239f6ec5d749b363590eadff994, type: 3}
+      material: {fileID: 2100000, guid: 82014db9dfc20d041bce9f3e82b0e328, type: 2}
+      accent: {fileID: 0}
+      count: 260
+      minScale: 0.6
+      maxScale: 1.5
+      blockRadius: 0
+      flat: 0
+      tilt: 0
+      noShadow: 1
+      crushable: 0
+      hard: 0
+    - name: Husk
+      mesh: {fileID: -3288555604101446211, guid: b9cd6870988cbb74f9d9fb11883f6e61, type: 3}
+      material: {fileID: 2100000, guid: 7965874aa0261d94cbfd5d5060bd95bb, type: 2}
+      accent: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      count: 10
+      minScale: 0.9
+      maxScale: 1.25
+      blockRadius: 1.7
+      flat: 0
+      tilt: 5
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    - name: Pylon
+      mesh: {fileID: 6291026919435153079, guid: 6720fd93a69259c4e9a85f7e0670d1e5, type: 3}
+      material: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+      accent: {fileID: 2100000, guid: 7965874aa0261d94cbfd5d5060bd95bb, type: 2}
+      count: 6
+      minScale: 1
+      maxScale: 1.3
+      blockRadius: 0.5
+      flat: 0
+      tilt: 4
+      noShadow: 0
+      crushable: 0
+      hard: 0
+    species:
+    - {fileID: 11400000, guid: cee087fa361f55945a84795c12848810, type: 2}
+    - {fileID: 11400000, guid: 704bc72912113cb468f79e94e7eff5cb, type: 2}
+    - {fileID: 11400000, guid: c801cb3b4914f60428def40032eb6bc8, type: 2}
+  border:
+    name: Cliff
+    mesh: {fileID: -121586978152425214, guid: ee46db8b5ab97654bb56c83143e7f49f, type: 3}
+    material: {fileID: 2100000, guid: cb294774eb51ab841b9510cf101520a4, type: 2}
+    accent: {fileID: 0}
+    count: 0
+    minScale: 1
+    maxScale: 1.8
+    blockRadius: 0
+    flat: 0
+    tilt: 0
+    noShadow: 0
+    crushable: 0
+    hard: 0
+  borderSpacing: 6
+  pillar:
+    name: Pillar
+    mesh: {fileID: -8116138440861595531, guid: bf2d518817ac3204cada2781e5e1f942, type: 3}
+    material: {fileID: 2100000, guid: da6d00f64565f3e46996fc3335f28dea, type: 2}
+    accent: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+    count: 0
+    minScale: 1
+    maxScale: 1
+    blockRadius: 0
+    flat: 0
+    tilt: 0
+    noShadow: 0
+    crushable: 0
+    hard: 0
+  pillarSpacing: 5
+  wall:
+    name: Dungeon wall
+    mesh: {fileID: -6364070977469648862, guid: 0f53f62de59a5064086827cad8967ec2, type: 3}
+    material: {fileID: 2100000, guid: da6d00f64565f3e46996fc3335f28dea, type: 2}
+    accent: {fileID: 2100000, guid: 0a494e8edb787ea4aa69c3a4c76d1989, type: 2}
+    count: 0
+    minScale: 1
+    maxScale: 1
+    blockRadius: 0
+    flat: 0
+    tilt: 0
+    noShadow: 0
+    crushable: 0
+    hard: 0
+  stand:
+    name: Arena stand
+    mesh: {fileID: -7658286875197277837, guid: ccf64cbcd22cfb84cbef423e123407c2, type: 3}
+    material: {fileID: 2100000, guid: da6d00f64565f3e46996fc3335f28dea, type: 2}
+    accent: {fileID: 2100000, guid: 0a494e8edb787ea4aa69c3a4c76d1989, type: 2}
+    count: 0
+    minScale: 1
+    maxScale: 1
+    blockRadius: 0
+    flat: 0
+    tilt: 0
+    noShadow: 0
+    crushable: 0
+    hard: 0
+  bossGate: {fileID: -3595365136494066701, guid: d1b62f9ec1874374bb894e588d3b89d5, type: 3}
+  gate: {fileID: 962209921104072034, guid: 701cb92445d466f4daf892cff87e93a1, type: 3}

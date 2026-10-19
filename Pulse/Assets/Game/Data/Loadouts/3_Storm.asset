@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17405d445aff66f42a9f128e3862338e, type: 3}
+  m_Name: 3_Storm
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.Loadout
+  displayName: Storm
+  frame: {fileID: 11400000, guid: 2acf730f905bc9a46984dd68e1421095, type: 2}
+  reactor: {fileID: 11400000, guid: decc0007107db8243a7319e555e0e60b, type: 2}
+  drive: {fileID: 11400000, guid: eec5f2cc1ae38fc44927851b523de217, type: 2}
+  modules:
+  - slot: front
+    module: {fileID: 11400000, guid: 5d48b9ed60d486144ba20e9a5901dea1, type: 2}
+  - slot: turret
+    module: {fileID: 11400000, guid: 0fd124940dfd07e4f804c51ab4f5fda4, type: 2}
+  - slot: rear
+    module: {fileID: 11400000, guid: ab936645a9ec02c43a7d50c4da100fa9, type: 2}
+  - slot: system1
+    module: {fileID: 11400000, guid: eb9277a8cf3890c4a91423ea78604284, type: 2}
+  - slot: armor3
+    module: {fileID: 11400000, guid: 3424b9621d60a6b42a795818aed83286, type: 2}

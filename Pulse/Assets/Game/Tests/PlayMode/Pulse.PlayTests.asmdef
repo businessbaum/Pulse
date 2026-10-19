@@ -1,0 +1,17 @@
+{
+    "name": "Pulse.PlayTests",
+    "rootNamespace": "Pulse.PlayTests",
+    "references": [
+        "Pulse.Runtime",
+        "UnityEngine.TestRunner"
+    ],
+    "includePlatforms": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ]
+}

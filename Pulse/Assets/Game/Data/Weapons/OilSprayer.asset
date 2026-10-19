@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb79c61ca5cae2d4aaae5888846940ed, type: 3}
+  m_Name: OilSprayer
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.WeaponDef
+  displayName: Oil Sprayer
+  description: Drops a pool of oil that slows enemies and waits for a spark.
+  powerCost: 2
+  mesh: {fileID: 823012173772896607, guid: 96b5054c78f912b4dbcbb4446c17bc96, type: 3}
+  delivery: 2
+  state: 4
+  damage: 0
+  cooldown: 2.2
+  range: 14
+  projectileSpeed: 30
+  coneHalfAngle: 18
+  anchoredToRig: 0
+  radius: 2
+  zoneDuration: 7

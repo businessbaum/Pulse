@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: FrostHulk
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Frost Hulk
+  hp: 110
+  speed: 2.1
+  radius: 1
+  armor: 2
+  contactDamage: 14
+  behaviour: 5
+  packSize: 1
+  trait: Slow and tough. Pounds the ground around it.
+  bossTrait: A huge slam that slows, and frost breaks out around it.
+  miniBossName: Frost Crusher
+  bossName: Glacier
+  mesh: {fileID: 966177959245677195, guid: 21cfda0e14b93a843a49b06acff2a976, type: 3}
+  height: 2
+  body: {fileID: 2100000, guid: 81b861b7de19f6a4fbc771d9927b1335, type: 2}
+  plate: {fileID: 2100000, guid: 7b922aebef744c44c92f8b8743f9f746, type: 2}
+  glow: {fileID: 2100000, guid: 8021f76ad507fec48a6877892054af53, type: 2}
+  wobble: 0
+  legMesh: {fileID: 6073634363127542801, guid: 820e947d04f07d5459eb8dc31f666e4f, type: 3}
+  legSpacing: 0.42
+  hipHeight: 0.55

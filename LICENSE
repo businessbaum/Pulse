@@ -1,0 +1,11 @@
+Copyright (c) 2026 businessbaum. All rights reserved.
+
+This repository is published so that its source code, assets and documentation
+can be read and evaluated. No license is granted to use, copy, modify, merge,
+publish, distribute, sublicense or sell any part of it, in whole or in part,
+without prior written permission from the copyright holder.
+
+Third-party components in this repository remain under their own licenses:
+- the Barlow and Chakra Petch fonts in Pulse/Assets/Game/UI/Fonts/ (SIL Open Font
+  License 1.1, see ThirdParty/OFL-fonts.txt);
+- Unity packages listed in Pulse/Packages/manifest.json (Unity's terms).

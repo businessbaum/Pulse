@@ -1,0 +1,10 @@
+{
+    "name": "Pulse.Runtime",
+    "rootNamespace": "Pulse",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "autoReferenced": true
+}

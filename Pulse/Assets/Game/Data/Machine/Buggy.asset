@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17213265a5dcaf64da02abdac4be907a, type: 3}
+  m_Name: Buggy
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.FrameDef
+  displayName: Buggy
+  description: Small and light. One weapon, and one socket that takes a system or armor.
+  price: 0
+  hull: 100
+  marks:
+  - cost: 60
+    hull: 20
+    armor: 0
+  - cost: 140
+    hull: 30
+    armor: 1
+  bodySize: {x: 1.4, y: 0.6, z: 2.1}
+  bodyMesh: {fileID: -7496409448393097829, guid: c64de62fbcd506c4bb2f4cd6c520d32d, type: 3}
+  wheelMesh: {fileID: -2309305249758762421, guid: 2d98c82f177cbdd4a931b4c623ef1e8b, type: 3}
+  schematicSize: {x: 640, y: 236}
+  slots:
+  - id: turret
+    type: 0
+    mount: 1
+    localPos: {x: 0, y: 0.22, z: 0.25}
+    schematicPos: {x: 230, y: 104}
+  - id: socket
+    type: 4
+    mount: 1
+    localPos: {x: 0, y: 0.15, z: -0.6}
+    schematicPos: {x: 410, y: 104}
+  - id: drive
+    type: 3
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 320, y: 196}
+  wires:
+  - system: socket
+    slot: turret

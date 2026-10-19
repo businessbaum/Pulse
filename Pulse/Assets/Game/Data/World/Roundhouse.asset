@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab455796ca797c04cbc87a6f1e91736a, type: 3}
+  m_Name: Roundhouse
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.LobbyDef
+  wall: {fileID: -7242862892061494863, guid: c37426752997b8f4f8b55f8a4641badd, type: 3}
+  bayDoor: {fileID: -6948897292169629870, guid: 6d5bd966cb8102d4fb990bce64b7fe0c, type: 3}
+  gate: {fileID: 962209921104072034, guid: 701cb92445d466f4daf892cff87e93a1, type: 3}
+  turntable: {fileID: -1574482671090449791, guid: 0c44c2450a36f3648b2ed68b80f7b303, type: 3}
+  deck: {fileID: -962989093080268501, guid: 4117de3cb3eca0f438031f6fcb0e4258, type: 3}
+  armBase: {fileID: -79541733829030174, guid: a79927c9023baa641b11d8e69802620e, type: 3}
+  armTurret: {fileID: -2986800651342257103, guid: 533e38a601a39054c9ed4036c69875cb, type: 3}
+  armUpper: {fileID: -1208073368400333650, guid: a5d4a35e5cb39094caf102c6a89f94e6, type: 3}
+  armFore: {fileID: -7235342795991325052, guid: a1342a09e46dbc449a13bc87b9ed3683, type: 3}
+  armWelder: {fileID: 5888834895510420248, guid: 3889f353ab8d73f4fbade46870e2f981, type: 3}
+  armClaw: {fileID: 6034379856430713947, guid: b2974a7478dc1a24b90b7d66a5f31e5f, type: 3}
+  lamp: {fileID: 3468755486377148355, guid: 5dea891aaf750344d8b5769a7f37c100, type: 3}
+  crate: {fileID: -3660275907326674588, guid: d1756e9befda67b4eac0895b0a2b4b8c, type: 3}
+  barrel: {fileID: 8108563764783910780, guid: 7a87be405391e10439935756a31a3fed, type: 3}
+  workbench: {fileID: -6200502243224066735, guid: 2c41530282caa974db0679dfced93361, type: 3}
+  shelf: {fileID: -4552961407312753236, guid: 2c352760de97ce743a9c54c8baf542cf, type: 3}
+  furnace: {fileID: -5242391522756403421, guid: cbe62d41f15ee0149ab846196df1942e, type: 3}
+  frameRack: {fileID: -9223245857282487591, guid: 9375dd994761d6c47b3a4205f3e7ea9b, type: 3}
+  mechanic: {fileID: 3917595902475721762, guid: 9f97f6ed82005d541b4a92919bea286f, type: 3}
+  archivist: {fileID: -7812574573118023489, guid: 99dd7eba531d9ea48a934b0041fb4bcf, type: 3}
+  smelter: {fileID: -7051621267363219507, guid: 96b922d381f99494aa94e7b9de564390, type: 3}
+  tunerRoomPrice: 150
+  models:
+  - name: RH_DoorFrame
+    mesh: {fileID: 8190710575336624637, guid: 269cea2341e9681468a597b625abe44c, type: 3}
+  - name: RH_Shutter
+    mesh: {fileID: 7675018786028066317, guid: e8b9c14d7dd2df34087eabf075770567, type: 3}
+  - name: RH_LockBar
+    mesh: {fileID: 2052651439551064151, guid: 1a38313e049013644985d28cbfce7593, type: 3}
+  - name: TR_Floor
+    mesh: {fileID: 9212010009119528339, guid: b564833b19c9dc0448c82c0493a06f58, type: 3}
+  - name: TR_Wall
+    mesh: {fileID: 5161803145624088975, guid: dd9665dcd1028c244afff5c5d35df935, type: 3}
+  - name: TR_Corner
+    mesh: {fileID: 7616850898526522633, guid: 70e94e71b06f8244db85f0ac907f389f, type: 3}
+  - name: TR_Kerb
+    mesh: {fileID: 5617822503985599366, guid: ed1a2873246673b439a2755d5480d314, type: 3}
+  - name: TR_Press
+    mesh: {fileID: 1850702603738528732, guid: 5e31faa31df426441b46166042956573, type: 3}
+  - name: TR_PressHead
+    mesh: {fileID: 7836911454162832823, guid: 79d13ba5f86fd9a4abde8e1110d5f2b5, type: 3}
+  - name: NPC_Tuner
+    mesh: {fileID: -7541990336367910836, guid: e2820819ae9df6542986557c5150d36c, type: 3}
+  - name: NPC_Tuner_Arm
+    mesh: {fileID: -4785544559783072898, guid: 6e7e45570c2e6d54b8f8b8ab6790d39b, type: 3}
+  - name: TR_Console
+    mesh: {fileID: -495177339641863236, guid: a5c4293542406a047ab051b1e705d88a, type: 3}
+  - name: TR_Shelf
+    mesh: {fileID: -2643494759203714644, guid: 8ee8c2aca29a3024e9524294a3e0fa0e, type: 3}
+  - name: TR_ToolWall
+    mesh: {fileID: 3464515351994939493, guid: 8c60cdc99b243ad48878c83126c35590, type: 3}
+  - name: TR_Bench
+    mesh: {fileID: -6508265133290456421, guid: b8743caab0771c248b9946b0b3e54d0b, type: 3}
+  - name: TR_Tanks
+    mesh: {fileID: 8918498850217145084, guid: 3c1f455834414134fbbbf5b750131bd8, type: 3}
+  - name: TR_Bins
+    mesh: {fileID: 1857515920662186364, guid: 104dae95ef7b8444282cb5a757ef458d, type: 3}
+  - name: TR_Reel
+    mesh: {fileID: 1042516998915575271, guid: c2c2d5f46b513f24fa92457874729231, type: 3}
+  - name: TR_Vent
+    mesh: {fileID: 2328560181362437171, guid: 7e3c259b95d150f41a8991ab1a690a26, type: 3}
+  - name: Crate
+    mesh: {fileID: -3660275907326674588, guid: d1756e9befda67b4eac0895b0a2b4b8c, type: 3}
+  - name: Barrel
+    mesh: {fileID: 8108563764783910780, guid: 7a87be405391e10439935756a31a3fed, type: 3}
+  - name: RH_Pillar
+    mesh: {fileID: -6456580157694188249, guid: 52fee22a2bb1b18439c9d96d831bb4e2, type: 3}
+  - name: RH_WallLow
+    mesh: {fileID: -3006913607122241817, guid: 8b9d077e0f9de0c4cba24d36f29593cb, type: 3}
+  - name: RH_PillarLow
+    mesh: {fileID: -2665803566938570026, guid: 7a359c9bdfbd553479f379c4bae9be29, type: 3}
+  - name: RH_Display
+    mesh: {fileID: -7311591396173664357, guid: 90169d5b4eb0f7d44a2c4f4715cfdb70, type: 3}
+  - name: RM_Floor
+    mesh: {fileID: -2546601741692496598, guid: 8690ee60bd0f87e4fae09a3bc4c83b5e, type: 3}
+  - name: MR_Lift
+    mesh: {fileID: -8623168861399465029, guid: 2c9594c1ec18d074cb3f6162f97cdd9a, type: 3}
+  - name: MR_Hoist
+    mesh: {fileID: -6602930085628899279, guid: 225a858641440c246a4ce408da2ad3d3, type: 3}
+  - name: MR_Load
+    mesh: {fileID: -6730469016489208378, guid: 5eb5b8854a8d864429fd126eaaa0ccaa, type: 3}
+  - name: MR_ToolChest
+    mesh: {fileID: 5218797638828629875, guid: 087523e97eab0ca4eba17a7aa5139aa4, type: 3}
+  - name: MR_Compressor
+    mesh: {fileID: 987566104440842307, guid: 4889f77ff38d8f746a43f5fea6a45bcf, type: 3}
+  - name: MR_Gear
+    mesh: {fileID: 8030267209458754342, guid: 95685842b07095e419521dce95dd7bd2, type: 3}
+  - name: MR_WeaponStand
+    mesh: {fileID: 8925478841811790894, guid: 93f2714c717bf6b43beebef5ff598d97, type: 3}
+  - name: MR_Welder
+    mesh: {fileID: 635701097896828478, guid: 16a6276a27364ba4aad2641094d47c8c, type: 3}
+  - name: MR_Clutter
+    mesh: {fileID: -6828095153927173196, guid: 56ade951c22ab53499824fc8e0e71005, type: 3}
+  - name: AR_Stacks
+    mesh: {fileID: 129419856325894827, guid: cbbb23e561cdc994797063db17a89f92, type: 3}
+  - name: AR_CardCabinet
+    mesh: {fileID: 7790227332507624869, guid: 659ee11966209bb44aa96b43564530a1, type: 3}
+  - name: AR_Desk
+    mesh: {fileID: -6887104497195097492, guid: 66ef339cdf244d4448c8e1682804e73f, type: 3}
+  - name: AR_Case
+    mesh: {fileID: -3838061964590672721, guid: 98b3210e573f2f84595420e5708ee258, type: 3}
+  - name: AR_Projector
+    mesh: {fileID: -7264500292648471552, guid: 44a18cab1db16e341bf90724f111a6ec, type: 3}
+  - name: AR_Ladder
+    mesh: {fileID: -8370625252901196783, guid: d273c9ecfbe93e44ebba458a374867b7, type: 3}
+  - name: AR_TapeBank
+    mesh: {fileID: -5416213290301904544, guid: 13fb68d9b7c2d5145b9a15d30b1f9658, type: 3}
+  - name: AR_Reel
+    mesh: {fileID: -7001343192523193232, guid: ea1571dc9e549c94792f5d2d37d0fad2, type: 3}
+  - name: AR_Scrolls
+    mesh: {fileID: 2904363884989885356, guid: 504494b8b974b3345a8a0810c5dff7ae, type: 3}
+  - name: SR_Rail
+    mesh: {fileID: 2762174908935722524, guid: 2fd7f6f46721c5b4abbae4ad50e0426a, type: 3}
+  - name: SR_Cart
+    mesh: {fileID: -8937487672155110339, guid: ea66c3cedc0541044acaeede87d34731, type: 3}
+  - name: SR_Moulds
+    mesh: {fileID: 2153574205304773666, guid: 1bed09b76652ebc4bb6e0eca91790a2b, type: 3}
+  - name: SR_Hammer
+    mesh: {fileID: -6842758571754097784, guid: 8ad2a9eaf0d26334cb8596920dcabd21, type: 3}
+  - name: SR_HammerHead
+    mesh: {fileID: -5182717771085458412, guid: 2c77599288a884e4db61c72db5b33c6e, type: 3}
+  - name: SR_Bellows
+    mesh: {fileID: 5439907431453789912, guid: acd2fa6e6eb1b8b4dafebc07eb6b9e45, type: 3}
+  - name: SR_CoalBin
+    mesh: {fileID: -8663555402797145550, guid: 2f58ac2fc85928a439de109f30d0e37e, type: 3}
+  - name: SR_Ingots
+    mesh: {fileID: -3065895588272436144, guid: a873ed4e253e8ab478ad548b9fc3ac9a, type: 3}
+  - name: SR_Quench
+    mesh: {fileID: 285475047587043105, guid: 70021b9fa024dd747bc3a40cc910bba9, type: 3}
+  character: {fileID: 6622264641530768373, guid: 2d330c9374aa7e54b90904e1af923307, type: 3}
+  characterLeg: {fileID: 101066441388512238, guid: 471c35fe61284b242b494b820daa1f48, type: 3}
+  characterArm: {fileID: -8370996831216712969, guid: 16adbc62bd7634b44bdcbd3804da5e55, type: 3}
+  walkSpeed: 4.2
+  wallMaterial: {fileID: 2100000, guid: 2a8d3b18220e32d48b14cc7868b98c0a, type: 2}
+  trim: {fileID: 2100000, guid: c004c7947bec00148a24479edd407ea5, type: 2}
+  lampGlow: {fileID: 2100000, guid: 95445f0f4e754494d98306c8217f75b5, type: 2}
+  fireGlow: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+  floor: {r: 0.2, g: 0.19, b: 0.19, a: 1}
+  floorAlt: {r: 0.26, g: 0.23, b: 0.21, a: 1}
+  floorBand: {r: 0.34, g: 0.3, b: 0.24, a: 1}

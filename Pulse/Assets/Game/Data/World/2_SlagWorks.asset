@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5310e350c31e6724b8c84b98ac093f32, type: 3}
+  m_Name: 2_SlagWorks
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.DungeonDef
+  displayName: Rime Vault
+  map: '###################################
+
+    #.....s.....#.........#.....s.....#
+
+    #...........#.........#...........#
+
+    #...........#....v....#...........#
+
+    #....o......................o.....#
+
+    #.................................#
+
+    #.........o.....o.....o...........#
+
+    #.s.............@...............s.#
+
+    #.........o.....o.....o...........#
+
+    #.................................#
+
+    #....o......................o.....#
+
+    #...........#....v....#...........#
+
+    #...........#.........#...........#
+
+    #.....s.....#.........#.....s.....#
+
+    ###################################'
+  arenaRadius: 24
+  waves:
+  - grunts: 16
+    brutes: 1
+  - grunts: 22
+    brutes: 2
+  - grunts: 20
+    brutes: 4
+  - grunts: 26
+    brutes: 5
+  reward: 100
+  finds:
+  - {fileID: 11400000, guid: ee72460f94cfa15439b03c3d38b4fc6c, type: 2}
+  - {fileID: 11400000, guid: d3975712702f86f4caf870b3952bc3be, type: 2}
+  - {fileID: 11400000, guid: 1dd0bacefd1647f418e955dbe0bd1610, type: 2}
+  boss: {fileID: 0}
+  bossTitle: 
+  bossSecondName: 
+  landmark: {fileID: 0}
+  landmarkStone: {fileID: 0}
+  landmarkTrim: {fileID: 0}
+  landmarkFires: []
+  landmarkDepth: 0
+  landmarkRadius: 0

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: EmberSpitter
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Ember Spitter
+  hp: 28
+  speed: 3
+  radius: 0.55
+  armor: 0
+  contactDamage: 6
+  behaviour: 3
+  packSize: 1
+  trait: Keeps its distance and lobs fire.
+  bossTrait: Lobs five globs of fire at once.
+  miniBossName: Ember Mortar
+  bossName: Kiln Maw
+  mesh: {fileID: -6515074148283172425, guid: 379b4ed6e431d4e44a10363caf8d8f9a, type: 3}
+  height: 1.3
+  body: {fileID: 2100000, guid: 5be95c6519ef6714f82ad178aa985781, type: 2}
+  plate: {fileID: 2100000, guid: 4bd8222313cbee64abaa4b53d5625f11, type: 2}
+  glow: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+  wobble: 0
+  legMesh: {fileID: 8827295616181305227, guid: cbef5f99ef38a744ca0b1dfcfee6ef32, type: 3}
+  legSpacing: 0.26
+  hipHeight: 0.4

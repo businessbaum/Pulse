@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5310e350c31e6724b8c84b98ac093f32, type: 3}
+  m_Name: 3_KilnsGate
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.DungeonDef
+  displayName: Tar Sump
+  map: '###############################
+
+    #..............s..............#
+
+    #.............................#
+
+    #.............................#
+
+    #....#########...#########....#
+
+    #....#...................#....#
+
+    #....#..v.............v..#....#
+
+    #....#...................#....#
+
+    #..........o.........o........#
+
+    #s.............@.............s#
+
+    #..........o.........o........#
+
+    #....#...................#....#
+
+    #....#..v.............v..#....#
+
+    #....#...................#....#
+
+    #....#########...#########....#
+
+    #.............................#
+
+    #.............................#
+
+    #..............s..............#
+
+    ###############################'
+  arenaRadius: 26
+  waves:
+  - grunts: 24
+    brutes: 3
+  - grunts: 30
+    brutes: 5
+  - grunts: 30
+    brutes: 8
+  - grunts: 36
+    brutes: 10
+  - grunts: 40
+    brutes: 12
+  reward: 180
+  finds:
+  - {fileID: 11400000, guid: 094db12fc7f8f4c458828d567b5aa150, type: 2}
+  - {fileID: 11400000, guid: cd652802ac7cc344182610bf6e695a32, type: 2}
+  - {fileID: 11400000, guid: 332adaa7fb1a7f749b86db5c63e5718b, type: 2}
+  - {fileID: 11400000, guid: b58ba4646ddf4ad40be02f811b735b03, type: 2}
+  boss: {fileID: 0}
+  bossTitle: 
+  bossSecondName: 
+  landmark: {fileID: 0}
+  landmarkStone: {fileID: 0}
+  landmarkTrim: {fileID: 0}
+  landmarkFires: []
+  landmarkDepth: 0
+  landmarkRadius: 0

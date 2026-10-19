@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17213265a5dcaf64da02abdac4be907a, type: 3}
+  m_Name: Crawler
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.FrameDef
+  displayName: Crawler
+  description: A low, wide body on four wheels. Three weapons, two systems and three armor slots.
+  price: 500
+  hull: 150
+  marks:
+  - cost: 250
+    hull: 30
+    armor: 0
+  - cost: 500
+    hull: 45
+    armor: 1
+  bodySize: {x: 1.7, y: 0.6, z: 2.8}
+  bodyMesh: {fileID: -6933930913981930926, guid: 4b5f6df5bf8ab494199f1039e7161aba, type: 3}
+  wheelMesh: {fileID: -2309305249758762421, guid: 2d98c82f177cbdd4a931b4c623ef1e8b, type: 3}
+  schematicSize: {x: 640, y: 236}
+  slots:
+  - id: front
+    type: 0
+    mount: 0
+    localPos: {x: 0, y: 0.22, z: 1}
+    schematicPos: {x: 70, y: 122}
+  - id: turret
+    type: 0
+    mount: 1
+    localPos: {x: 0, y: 0.22, z: 0}
+    schematicPos: {x: 320, y: 122}
+  - id: rear
+    type: 0
+    mount: 3
+    localPos: {x: 0, y: 0.22, z: -1}
+    schematicPos: {x: 570, y: 122}
+  - id: system1
+    type: 1
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 190, y: 122}
+  - id: system2
+    type: 1
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 450, y: 122}
+  - id: armor1
+    type: 2
+    mount: 1
+    localPos: {x: -0.55, y: 0.15, z: 0.5}
+    schematicPos: {x: 190, y: 30}
+  - id: armor2
+    type: 2
+    mount: 1
+    localPos: {x: 0.55, y: 0.15, z: -0.5}
+    schematicPos: {x: 450, y: 30}
+  - id: armor3
+    type: 2
+    mount: 1
+    localPos: {x: -0.55, y: 0.15, z: -0.5}
+    schematicPos: {x: 320, y: 206}
+  - id: drive
+    type: 3
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 190, y: 206}
+  wires:
+  - system: system1
+    slot: front
+  - system: system1
+    slot: turret
+  - system: system1
+    slot: armor1
+  - system: system2
+    slot: turret
+  - system: system2
+    slot: rear
+  - system: system2
+    slot: armor2

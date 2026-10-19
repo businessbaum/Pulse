@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: CinderMite
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Cinder Mite
+  hp: 9
+  speed: 4.6
+  radius: 0.32
+  armor: 0
+  contactDamage: 2
+  behaviour: 1
+  packSize: 4
+  trait: Weak alone, but it comes in packs.
+  bossTrait: Keeps hatching mites until it is put down.
+  miniBossName: Mite Matron
+  bossName: Brood Mother
+  mesh: {fileID: -8966293408642911355, guid: bbdd71eefef816d468d8d6813a6df176, type: 3}
+  height: 0.45
+  body: {fileID: 2100000, guid: 5be95c6519ef6714f82ad178aa985781, type: 2}
+  plate: {fileID: 2100000, guid: 4bd8222313cbee64abaa4b53d5625f11, type: 2}
+  glow: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+  wobble: 0
+  legMesh: {fileID: 4234529753570754741, guid: 1d371cb33501fd24bb006142262032cb, type: 3}
+  legSpacing: 0.2
+  hipHeight: 0.2

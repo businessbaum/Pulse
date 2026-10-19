@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71077e01738d6c34a9c8d402e96b334c, type: 3}
+  m_Name: Spiked
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.PerkDef
+  displayName: Spiked
+  text: Whatever hits the machine takes {0} damage
+  fits: 2
+  stat: 7
+  state: 0
+  values:
+  - 6
+  - 10
+  - 16
+  - 24
+  - 36

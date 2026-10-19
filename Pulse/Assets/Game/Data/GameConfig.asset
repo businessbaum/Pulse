@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a958652704a4b414a9fb5db51b7c5606, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.GameConfig
+  world: {fileID: 11400000, guid: e334da585c7207e4f8450be163742e8b, type: 2}
+  scenery: {fileID: 11400000, guid: 1d3eca25f3022ab49828fe68bc5dd25a, type: 2}
+  lobby: {fileID: 11400000, guid: 58e483ef0c9cc2648aec9229b2f7e953, type: 2}
+  boltMesh: {fileID: -881844236896109120, guid: b0fd96c115f3a0840a758c80b2aee1c1, type: 3}
+  globMesh: {fileID: 6451060078360646279, guid: 88a140ede9816fc439cd433134e69b03, type: 3}
+  contentVersion: 9
+  loadouts:
+  - {fileID: 11400000, guid: 491e95cbe0c850b488169c799f911b31, type: 2}
+  startingParts:
+  - {fileID: 11400000, guid: 0fd124940dfd07e4f804c51ab4f5fda4, type: 2}
+  - {fileID: 11400000, guid: 18b47b909dd002344b00c9c40b88b7cf, type: 2}
+  - {fileID: 11400000, guid: ab936645a9ec02c43a7d50c4da100fa9, type: 2}
+  - {fileID: 11400000, guid: 5d48b9ed60d486144ba20e9a5901dea1, type: 2}
+  - {fileID: 11400000, guid: 51345a493e9e3344f97b45840748ab79, type: 2}
+  - {fileID: 11400000, guid: eb9277a8cf3890c4a91423ea78604284, type: 2}
+  - {fileID: 11400000, guid: 3424b9621d60a6b42a795818aed83286, type: 2}
+  - {fileID: 11400000, guid: e67f20ef2a88eda4abc9ac7d9185d817, type: 2}
+  - {fileID: 11400000, guid: 7c86c1fb894854545944ed4f8403c038, type: 2}
+  frames:
+  - {fileID: 11400000, guid: 72789cd2c51cfe74db1af709800564e7, type: 2}
+  - {fileID: 11400000, guid: 2fef1ada388cb9b4184355fb90f0f818, type: 2}
+  - {fileID: 11400000, guid: 2acf730f905bc9a46984dd68e1421095, type: 2}
+  reactors:
+  - {fileID: 11400000, guid: decc0007107db8243a7319e555e0e60b, type: 2}
+  - {fileID: 11400000, guid: edf2d6411edf9814e80c3fe8e8df6bea, type: 2}
+  drives:
+  - {fileID: 11400000, guid: eec5f2cc1ae38fc44927851b523de217, type: 2}
+  modules:
+  - {fileID: 11400000, guid: 0fd124940dfd07e4f804c51ab4f5fda4, type: 2}
+  - {fileID: 11400000, guid: 18b47b909dd002344b00c9c40b88b7cf, type: 2}
+  - {fileID: 11400000, guid: ab936645a9ec02c43a7d50c4da100fa9, type: 2}
+  - {fileID: 11400000, guid: 5d48b9ed60d486144ba20e9a5901dea1, type: 2}
+  - {fileID: 11400000, guid: 543b75c0c388b0a4480ca4a22e303484, type: 2}
+  - {fileID: 11400000, guid: ee72460f94cfa15439b03c3d38b4fc6c, type: 2}
+  - {fileID: 11400000, guid: 1dd0bacefd1647f418e955dbe0bd1610, type: 2}
+  - {fileID: 11400000, guid: 332adaa7fb1a7f749b86db5c63e5718b, type: 2}
+  - {fileID: 11400000, guid: adec97973bba2c84189f589a6a7d4efa, type: 2}
+  - {fileID: 11400000, guid: ac6aade768b8fff4186c76d8071b7723, type: 2}
+  - {fileID: 11400000, guid: 51345a493e9e3344f97b45840748ab79, type: 2}
+  - {fileID: 11400000, guid: eb9277a8cf3890c4a91423ea78604284, type: 2}
+  - {fileID: 11400000, guid: 094db12fc7f8f4c458828d567b5aa150, type: 2}
+  - {fileID: 11400000, guid: d3975712702f86f4caf870b3952bc3be, type: 2}
+  - {fileID: 11400000, guid: b58ba4646ddf4ad40be02f811b735b03, type: 2}
+  - {fileID: 11400000, guid: 7c86c1fb894854545944ed4f8403c038, type: 2}
+  - {fileID: 11400000, guid: 3424b9621d60a6b42a795818aed83286, type: 2}
+  - {fileID: 11400000, guid: e67f20ef2a88eda4abc9ac7d9185d817, type: 2}
+  - {fileID: 11400000, guid: cd652802ac7cc344182610bf6e695a32, type: 2}
+  perks:
+  - {fileID: 11400000, guid: d8828bf826f7fd24fb625390a5cac2b5, type: 2}
+  - {fileID: 11400000, guid: 02058513b7d3eb541bd8fd6e11b523bb, type: 2}
+  - {fileID: 11400000, guid: 1096faf21cfb55549b3e8ea7d8c9bef1, type: 2}
+  - {fileID: 11400000, guid: b78401375bcf3eb4cb45ccba58c54996, type: 2}
+  - {fileID: 11400000, guid: 3ede5f0bdc571084ea73f2b666a2da4f, type: 2}
+  - {fileID: 11400000, guid: 73310328a3c5e5045a0f077038defe42, type: 2}
+  - {fileID: 11400000, guid: c97706647baa6bf4b9eb1282616d73bc, type: 2}
+  - {fileID: 11400000, guid: 5b7eb47200accbf4ea3bd30cbf233fcc, type: 2}
+  - {fileID: 11400000, guid: 6a6960bf2df1b0e4eb6081d38f2d98cd, type: 2}
+  - {fileID: 11400000, guid: 2fc45790908b9bc45b8d9178795de833, type: 2}
+  - {fileID: 11400000, guid: 559717a023cfc4e4bbed022a66541560, type: 2}
+  - {fileID: 11400000, guid: 867c052b28655294eabe1b8e29d3b3af, type: 2}
+  - {fileID: 11400000, guid: e86b8904f3ffd524aa61e375d0cbc0a5, type: 2}
+  grunt: {fileID: 11400000, guid: f53551609c5ec684c944ad8d90f11083, type: 2}
+  brute: {fileID: 11400000, guid: b989c77d1eaaa2743b24427a460f88fa, type: 2}
+  drops: {fileID: 11400000, guid: cca73ce99504ad443b389fe706896fcc, type: 2}
+  echoes:
+  - {fileID: 11400000, guid: e9bd06278876b804db5566051e23114b, type: 2}
+  - {fileID: 11400000, guid: d186fd14575036f439d45a7bfc6cca0c, type: 2}
+  - {fileID: 11400000, guid: 5830576926e6a234abc67ecac3158cf6, type: 2}
+  - {fileID: 11400000, guid: 54748e1348f64d44a8bc9cd918cf17cb, type: 2}
+  - {fileID: 11400000, guid: 7fff17087349d1341b2dfd08fcaaa8fb, type: 2}
+  - {fileID: 11400000, guid: a8e8e963e09eb534ca1141f587b2df6d, type: 2}
+  - {fileID: 11400000, guid: 9a2ff3650595b814083cc0303357c80e, type: 2}
+  - {fileID: 11400000, guid: 5b0c3500fd5df0044a2ae4772439f7e9, type: 2}
+  - {fileID: 11400000, guid: 8f5c3e64c7d676e4797f54f99f4391d7, type: 2}
+  - {fileID: 11400000, guid: 389fb914ff1dbb34eb8ee8476e4a1b5c, type: 2}
+  - {fileID: 11400000, guid: 98ed1040859a3e84d98daba0c1461944, type: 2}
+  - {fileID: 11400000, guid: 2fc035e844e86aa45bb401be0f5bda81, type: 2}
+  veinMesh: {fileID: 6266943370978910147, guid: 41fb7d39d0910d64e867880f41fbb4ce, type: 3}
+  cacheMesh: {fileID: -8432406431581934186, guid: 85a209284d1eec74fb2393381430cfeb, type: 3}
+  cacheOpenMesh: {fileID: -3314654465897264211, guid: 1f4c4ed2deda9a649af4dfa4dbc17076, type: 3}
+  mineMesh: {fileID: -801319282681951034, guid: 32c02b16b37d916498088977bfd8f933, type: 3}
+  ground: {fileID: 2100000, guid: 2e3efae00d56d264c81581880ad76c52, type: 2}
+  floor: {fileID: 2100000, guid: 1052aa99be649db498b2af357b2e8f76, type: 2}
+  body: {fileID: 2100000, guid: 301af47b862069f4dabdbd21b302bb88, type: 2}
+  part: {fileID: 2100000, guid: 9e1def6f9856c4d449134083a08b7ae8, type: 2}
+  enemy: {fileID: 2100000, guid: c130f033a971ee2429bd6631e51c0bf9, type: 2}
+  pulse: {fileID: 2100000, guid: 3b68767c46e7c304989fd1f730083eb0, type: 2}
+  dark: {fileID: 2100000, guid: 64b4323387e9e1f4bb110ca80ee18f6a, type: 2}
+  flash: {fileID: 2100000, guid: d89d07cd5307a71429ca7fdeb242c5f6, type: 2}
+  enemyPlate: {fileID: 2100000, guid: e60c44d692cb24042b20c8160446f3f2, type: 2}
+  enemyGlow: {fileID: 2100000, guid: efdc04a8b32f21344a122e8f4b58c6a5, type: 2}
+  particle: {fileID: 2100000, guid: 64b2893ee77783548aa00cfb812e9aa2, type: 2}
+  heat: {fileID: 2100000, guid: 54bb0294ffbadd34c837a92bbdeabfa9, type: 2}
+  shock: {fileID: 2100000, guid: 5422e7dbe3f164447a2632c7ebb04df2, type: 2}
+  cryo: {fileID: 2100000, guid: 8021f76ad507fec48a6877892054af53, type: 2}
+  oil: {fileID: 2100000, guid: 2090efffde50d9f4bb737773877b3aef, type: 2}
+  magnet: {fileID: 2100000, guid: 889dad0a6b9803445b8ab29764756b7e, type: 2}
+  stateDuration: 5
+  burnDps: 4
+  oilSlow: 0.6
+  shockStun: 0.25
+  chillSlow: 0.65
+  deepChillSlow: 0.4
+  firestormRadius: 1.9
+  firestormDuration: 4
+  firestormDps: 14
+  flashRadius: 2.4
+  flashDamage: 30
+  plasmaArcs: 3
+  plasmaRange: 4.5
+  plasmaDamage: 18
+  thermalShockRadius: 2.4
+  thermalShockDamage: 24
+  brittleBonus: 0.4
+  brittleTime: 6
+  superconductorJumps: 6
+  superconductorRange: 7
+  superconductorDamage: 16
+  blackIceRadius: 3.6
+  blackIceDamage: 12
+  blackIceStun: 1.3
+  blackIceSlide: 9

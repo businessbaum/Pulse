@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17213265a5dcaf64da02abdac4be907a, type: 3}
+  m_Name: Rover
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.FrameDef
+  displayName: Rover
+  description: Room for a second weapon. One system acts on both, and on the armor too.
+  price: 150
+  hull: 120
+  marks:
+  - cost: 120
+    hull: 25
+    armor: 0
+  - cost: 260
+    hull: 35
+    armor: 1
+  bodySize: {x: 1.55, y: 0.6, z: 2.45}
+  bodyMesh: {fileID: 6759721063755272992, guid: d6f624ece9b16404da8e9b1e617b6c75, type: 3}
+  wheelMesh: {fileID: -2309305249758762421, guid: 2d98c82f177cbdd4a931b4c623ef1e8b, type: 3}
+  schematicSize: {x: 640, y: 236}
+  slots:
+  - id: front
+    type: 0
+    mount: 0
+    localPos: {x: 0, y: 0.22, z: 0.85}
+    schematicPos: {x: 120, y: 122}
+  - id: turret
+    type: 0
+    mount: 1
+    localPos: {x: 0, y: 0.22, z: -0.05}
+    schematicPos: {x: 520, y: 122}
+  - id: system1
+    type: 1
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 320, y: 122}
+  - id: armor1
+    type: 2
+    mount: 1
+    localPos: {x: 0, y: 0.15, z: -0.85}
+    schematicPos: {x: 320, y: 30}
+  - id: drive
+    type: 3
+    mount: 1
+    localPos: {x: 0, y: 0, z: 0}
+    schematicPos: {x: 320, y: 206}
+  wires:
+  - system: system1
+    slot: front
+  - system: system1
+    slot: turret
+  - system: system1
+    slot: armor1

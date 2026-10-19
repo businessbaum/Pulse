@@ -1,0 +1,1645 @@
+/* The shared style sheet for every screen. Values come from gui-style.md.
+   Screens use these variables and classes and never define their own colours. */
+
+:root {
+    --soot: #14171C;
+    --plate: #1F242B;
+    --plate-2: #2A313A;
+    --seam: #3D4752;
+    --chalk: #E8E4DA;
+    --dust: #9AA3AD;
+    --pulse: #5CF2A0;
+    --heat: #FF5A3C;
+    --shock: #FFD93B;
+    --cryo: #5CD6FF;
+    --oil: #A77BFF;
+    --magnet: #FF5FB4;
+}
+
+Label {
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Type ---- */
+
+/* Barlow for body text, Chakra Petch for display text, labels and every number.
+   The weight comes from the font file, so font-style stays normal. */
+
+.screen {
+    flex-grow: 1;
+    color: var(--chalk);
+    font-size: 18px;
+    -unity-font-definition: url("Fonts/Barlow-Regular.ttf");
+}
+
+/* Large words stand a little off the plate: a flat, hard shadow below them, never a soft one. */
+.display {
+    font-size: 40px;
+    letter-spacing: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+    color: var(--chalk);
+    text-shadow: 0 3px 0 rgba(6, 7, 10, 0.75);
+}
+
+.title {
+    font-size: 24px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+    text-shadow: 0 2px 0 rgba(6, 7, 10, 0.7);
+}
+
+.label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--dust);
+}
+
+.num {
+    font-size: 24px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+    text-shadow: 0 2px 0 rgba(6, 7, 10, 0.7);
+}
+
+.num-small {
+    font-size: 16px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.body {
+    font-size: 18px;
+    color: var(--chalk);
+    white-space: normal;
+    margin-top: 16px;
+}
+
+.small {
+    font-size: 14px;
+    color: var(--dust);
+}
+
+/* One line, cut off with dots when it does not fit. For texts in boxes of a fixed width. */
+.clip {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ---- Components ---- */
+
+/* Every plate is a piece of steel with a thickness, lit from the top left. --plate-depth is how
+   much of its side shows under it, in pixels: one plain dark band, drawn below the element, which
+   moves nothing. Plate.cs draws it. A plate has one edge: no second outline and no shadow. */
+.plate {
+    padding: 16px;
+    --plate-depth: 0;
+}
+
+/* A button is a face on a slab. The slab is drawn six pixels below the face; pressing moves the
+   face down onto it. Hovering lifts it a little. */
+.button {
+    margin-top: 24px;
+    padding-bottom: 6px;
+    align-self: flex-end;
+}
+
+.button__face {
+    flex-shrink: 0;
+    overflow: hidden;
+    --plate-depth: 0;
+    padding: 13px 22px;
+    align-items: center;
+    justify-content: center;
+    transition-property: translate;
+    transition-duration: 0.07s;
+    transition-timing-function: ease-out;
+}
+
+.button:hover .button__face {
+    translate: 0 -1px;
+}
+
+.button:active .button__face,
+.button--down .button__face {
+    translate: 0 5px;
+}
+
+.button__label {
+    font-size: 16px;
+    letter-spacing: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.button--primary .button__label {
+    color: var(--soot);
+}
+
+/* A button that cannot be used right now: hatched, with grey words. */
+.button__hatch {
+    left: 6px;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+}
+
+.button--off .button__label {
+    color: var(--dust);
+}
+
+.button--off:hover .button__face {
+    translate: 0 0;
+}
+
+/* As wide as the box it is in: for menus that are a column of choices. */
+.button--wide {
+    align-self: stretch;
+    margin-top: 12px;
+}
+
+/* The one large button of a screen that has nothing else to press. */
+.button--huge {
+    align-self: stretch;
+    margin-top: 20px;
+}
+
+.button--huge .button__face {
+    padding: 22px;
+}
+
+.button--huge .button__label {
+    font-size: 26px;
+    letter-spacing: 4px;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+}
+
+/* The stripes are drawn past the edges of the element and cut off at them. */
+.hatch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.progress {
+    width: 240px;
+    height: 6px;
+    margin-top: 8px;
+    background-color: var(--plate-2);
+}
+
+.progress__fill {
+    height: 100%;
+    background-color: var(--pulse);
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4px;
+}
+
+/* A bar is a groove with a rod in it. The groove is in shade along its top and catches the light
+   along its bottom; the rod is the other way round. */
+.bar {
+    height: 15px;
+    margin-bottom: 16px;
+    background-color: var(--plate-2);
+    border-top-width: 2px;
+    border-top-color: rgb(11, 13, 16);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(78, 90, 103);
+}
+
+.bar__fill {
+    height: 100%;
+    background-color: var(--chalk);
+    border-top-width: 2px;
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(163, 159, 151);
+}
+
+/* Nitro: grey while there is too little to light it, Pulse green once the key will do something. */
+.bar--nitro .bar__fill {
+    background-color: var(--dust);
+    border-top-color: rgb(196, 203, 210);
+    border-bottom-color: rgb(104, 112, 121);
+}
+
+.bar--ready .bar__fill {
+    background-color: var(--pulse);
+    border-top-color: rgb(186, 255, 218);
+    border-bottom-color: rgb(52, 170, 108);
+}
+
+.pips {
+    flex-direction: row;
+}
+
+.pip {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    border-width: 2px;
+    border-color: var(--pulse);
+}
+
+.pip--on {
+    background-color: var(--pulse);
+}
+
+/* Power the reactor does not have. */
+.pip--over {
+    border-color: var(--heat);
+    background-color: var(--heat);
+}
+
+.over {
+    color: var(--heat);
+}
+
+.chip {
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 10px;
+    margin-right: 8px;
+    --plate-depth: 2;
+}
+
+.chip__label {
+    font-size: 13px;
+    letter-spacing: 1px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.chip__num {
+    font-size: 15px;
+    margin-left: 10px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.glyph {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+
+/* ---- HUD layout: edges only, the centre stays empty ---- */
+
+/* Holds the whole HUD, so it can fade in as one. */
+.hud-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hud-top-left {
+    position: absolute;
+    left: 32px;
+    top: 32px;
+    flex-direction: row;
+}
+
+.counter {
+    margin-right: 32px;
+}
+
+.hud-top-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32px;
+    align-items: center;
+}
+
+.hud-top-right {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    align-items: flex-end;
+}
+
+.hud-bottom-left {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    width: 440px;
+    --plate-depth: 5;
+}
+
+/* Words that lie on the picture of the world, not on a plate, are set off from it the same way. */
+.hud-layer .label,
+.hud-top-left .label {
+    text-shadow: 0 2px 0 rgba(6, 7, 10, 0.7);
+}
+
+.hud-bottom-left .bar {
+    margin-bottom: 0;
+}
+
+/* Hull and Nitro side by side. */
+.hud-stats {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hud-stat {
+    width: 196px;
+}
+
+.hud-bottom-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 48px;
+    align-items: center;
+}
+
+/* The prompt for something the character stands next to: the key, and what it opens. It waits
+   below its place and comes up when it is needed. */
+.prompt {
+    flex-direction: row;
+    align-items: center;
+    --plate-depth: 5;
+    padding: 9px 22px 9px 11px;
+    translate: 0 90px;
+    opacity: 0;
+    transition-property: translate, opacity;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+}
+
+.prompt--shown {
+    translate: 0 0;
+    opacity: 1;
+}
+
+.keycap {
+    --plate-depth: 3;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 10px;
+    margin-right: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.keycap__label {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+    -unity-text-align: middle-center;
+    color: var(--soot);
+}
+
+.prompt__name {
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 0;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+/* Timed actions show where subtitles would be: bottom centre, a little above the edge. */
+.hud-subtitle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 132px;
+    align-items: center;
+}
+
+.timer {
+    align-items: center;
+}
+
+.timer__label {
+    font-size: 28px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+    margin-bottom: 10px;
+}
+
+.timer__bar {
+    width: 440px;
+    height: 24px;
+    padding: 3px;
+    border-width: 2px;
+    border-color: var(--chalk);
+    border-bottom-color: rgb(163, 159, 151);
+    border-right-color: rgb(163, 159, 151);
+    background-color: var(--soot);
+}
+
+.timer__fill {
+    height: 100%;
+    background-color: var(--pulse);
+    border-top-width: 2px;
+    border-top-color: rgb(186, 255, 218);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(52, 170, 108);
+}
+
+/* ---- Bars for mini bosses and bosses ---- */
+
+/* The wide bar of the boss that is after the machine: under the place name, top centre. */
+.boss {
+    margin-top: 18px;
+    align-items: center;
+}
+
+.boss__head {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.boss__badge {
+    width: 108px;
+    height: 28px;
+    margin-right: 12px;
+    border-width: 2px;
+    border-color: var(--seam);
+    background-color: var(--plate);
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.boss__rank {
+    font-size: 14px;
+    letter-spacing: 3px;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+    color: var(--chalk);
+}
+
+.boss__bar {
+    width: 640px;
+    height: 24px;
+    padding: 3px;
+    margin-bottom: 6px;
+    border-width: 2px;
+    border-color: var(--chalk);
+    border-bottom-color: rgb(163, 159, 151);
+    border-right-color: rgb(163, 159, 151);
+    background-color: var(--soot);
+}
+
+.boss__fill {
+    height: 100%;
+    background-color: var(--chalk);
+    border-top-width: 2px;
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(163, 159, 151);
+}
+
+/* Where a Warden's second phase begins. */
+.boss__mark {
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    bottom: -5px;
+    width: 3px;
+    background-color: var(--soot);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-color: var(--chalk);
+}
+
+/* The title card of a Warden. */
+.boss-card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60%;
+    height: 156px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.boss-card__band {
+    --plate-depth: 7;
+    width: 760px;
+    height: 156px;
+    padding: 0;
+    flex-direction: row;
+}
+
+/* The two ends of the plate are hatched. */
+.boss-card__cap {
+    width: 58px;
+    margin: 3px;
+    overflow: hidden;
+}
+
+.boss-card__middle {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.boss-card__over {
+    flex-direction: row;
+    align-items: center;
+    height: 26px;
+}
+
+.boss-card__label {
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin: 0 12px;
+    padding: 0;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--dust);
+}
+
+.boss-card__rule {
+    width: 46px;
+    height: 2px;
+    background-color: var(--seam);
+}
+
+.boss-card__gem {
+    width: 8px;
+    height: 8px;
+    margin: 0 9px;
+    rotate: 45deg;
+    background-color: var(--chalk);
+}
+
+.boss-card__name {
+    text-shadow: 0 4px 0 rgba(6, 7, 10, 0.75);
+    font-size: 62px;
+    letter-spacing: 9px;
+    margin: 0;
+    padding: 2px 0 4px 9px;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+    -unity-text-align: middle-center;
+    color: var(--chalk);
+}
+
+.boss-card__under {
+    width: 380px;
+    height: 4px;
+    align-items: center;
+}
+
+.boss-card__line {
+    height: 4px;
+    background-color: var(--heat);
+}
+
+/* A rule with a gem at its far end, on either side of the plate. */
+.boss-card__wing {
+    width: 150px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boss-card__wing .boss-card__rule {
+    flex-grow: 1;
+    background-color: var(--chalk);
+}
+
+.boss-card__wing--left {
+    transform-origin: right center;
+}
+
+.boss-card__wing--right {
+    transform-origin: left center;
+}
+
+/* The small bar that floats over every mini boss and boss. One notch: mini boss. Two: boss. */
+.elite {
+    position: absolute;
+    align-items: center;
+}
+
+.elite__head {
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 8px;
+    margin-bottom: 3px;
+    background-color: rgba(20, 23, 28, 0.86);
+}
+
+.notch {
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    background-color: var(--chalk);
+}
+
+.elite__name {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.elite__bar {
+    width: 136px;
+    height: 11px;
+    padding: 1px;
+    border-width: 2px;
+    border-color: var(--chalk);
+    background-color: var(--soot);
+}
+
+.elite__fill {
+    height: 100%;
+    background-color: var(--chalk);
+}
+
+/* ---- Signs that hover over objects in the lobby ---- */
+
+.sign-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sign {
+    position: absolute;
+    padding: 7px 14px;
+    --plate-depth: 3;
+}
+
+.sign__label {
+    font-size: 15px;
+    letter-spacing: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.sign--dim .sign__label {
+    color: var(--dust);
+}
+
+/* ---- Whole-screen layers ---- */
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 23, 28, 0.82);
+    display: none;
+}
+
+.overlay--heavy {
+    background-color: rgba(20, 23, 28, 0.93);
+}
+
+.dialog {
+    width: 520px;
+    padding: 32px;
+}
+
+/* ---- The screens of the lobby's machines ----
+   Three columns: the machines, the slots of the highlighted machine, and the parts that fit the
+   highlighted slot. Every box has a fixed size, so nothing moves whatever is highlighted. The
+   Archivist's screen uses the same frame. */
+
+.station {
+    width: 1400px;
+    height: 800px;
+    padding: 32px;
+    --plate-depth: 10;
+}
+
+.station__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 84px;
+}
+
+.station__body {
+    flex-direction: row;
+    height: 588px;
+}
+
+.station__list {
+    width: 264px;
+    margin-right: 24px;
+}
+
+.station__middle {
+    width: 540px;
+    margin-right: 24px;
+}
+
+.station__slots {
+    height: 341px;
+}
+
+.slot-row {
+    flex-direction: row;
+    align-items: center;
+    height: 31px;
+    padding: 0 12px 0 9px;
+    border-left-width: 3px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.slot-row:hover {
+    background-color: var(--plate-2);
+}
+
+.slot-row--on {
+    background-color: var(--plate-2);
+    border-color: var(--chalk);
+}
+
+.slot-row--focus {
+    border-color: var(--pulse);
+}
+
+.slot-row__slot {
+    width: 150px;
+}
+
+.slot-row__name {
+    width: 250px;
+}
+
+.slot-row__name--empty {
+    color: var(--seam);
+}
+
+.station__parts {
+    width: 484px;
+}
+
+.station__fits {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.part {
+    height: 68px;
+    padding: 6px 14px;
+    margin-bottom: 8px;
+    --plate-depth: 4;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.part:active {
+    translate: 0 2px;
+}
+
+.part__head {
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+}
+
+/* Chips in a row of the list are smaller than on a data sheet. */
+.part .chip {
+    padding: 0 8px;
+    margin-right: 6px;
+}
+
+.part .chip__label {
+    font-size: 12px;
+    margin: 0;
+    padding: 1px 0;
+}
+
+.part .glyph {
+    width: 11px;
+    height: 11px;
+    margin-right: 5px;
+}
+
+.part__name {
+    width: 170px;
+}
+
+.part__cost {
+    flex-grow: 1;
+    -unity-text-align: middle-right;
+}
+
+.part__cost--on {
+    color: var(--pulse);
+    letter-spacing: 1px;
+}
+
+.part__text {
+    height: 22px;
+    font-size: 14px;
+    color: var(--dust);
+}
+
+.station__buttons {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.station__buttons .button {
+    margin-right: 12px;
+}
+
+.station__take {
+    width: 270px;
+    margin-right: 0;
+}
+
+.station__save {
+    width: 200px;
+}
+
+/* ---- The Archivist's screen ---- */
+
+/* The number in the top right corner of a screen. */
+.station__purse {
+    align-items: flex-end;
+}
+
+/* The first line of a card: its name, and on the right a tag or two. */
+.card__line {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+}
+
+.card__name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 40px;
+}
+
+/* A small filled label: NEW, ACTIVE, a Mark. Pulse green means "this one"; the grey kind only states something. */
+.tag {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 0 0 0 6px;
+    padding: 1px 6px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--soot);
+    background-color: var(--pulse);
+    border-bottom-width: 2px;
+    border-color: rgb(46, 150, 96);
+}
+
+.tag--dim {
+    color: var(--chalk);
+    background-color: var(--seam);
+    border-color: rgb(34, 40, 47);
+}
+
+.chips {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ---- The Smelter's screen: the Marks of a frame, one under the other ---- */
+
+.smelter__names {
+    height: 62px;
+}
+
+.smelter__schematic {
+    height: 250px;
+    margin-bottom: 14px;
+}
+
+.step {
+    flex-direction: row;
+    align-items: center;
+    height: 84px;
+    padding: 0 20px;
+    margin-bottom: 12px;
+    --plate-depth: 5;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.step__name {
+    width: 110px;
+}
+
+.step__gives {
+    flex-grow: 1;
+}
+
+.step__cost {
+    font-size: 20px;
+    -unity-text-align: middle-right;
+}
+
+.step__cost--done {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--pulse);
+}
+
+.archive__grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 492px;
+    margin-right: 20px;
+}
+
+.tile {
+    width: 150px;
+    height: 136px;
+    margin-right: 12px;
+    margin-bottom: 14px;
+    padding: 10px 8px;
+    align-items: center;
+    --plate-depth: 6;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.tile:active {
+    translate: 0 2px;
+}
+
+/* The stripes of a part that has not been found stay inside the outline. */
+.tile .hatch {
+    left: 3px;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+}
+
+.tile__icon {
+    width: 64px;
+    height: 64px;
+    margin-top: 6px;
+}
+
+.tile__name {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    -unity-text-align: middle-center;
+    color: var(--chalk);
+    white-space: normal;
+}
+
+.tile__name--dim {
+    color: var(--dust);
+}
+
+.tile__tag {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    margin: 0;
+}
+
+.archive__sheet {
+    width: 536px;
+}
+
+.archive__chips {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+}
+
+.archive__text {
+    height: 72px;
+    font-size: 18px;
+    color: var(--chalk);
+    white-space: normal;
+    overflow: hidden;
+}
+
+.archive__stats {
+    height: 324px;
+}
+
+.stat-row {
+    height: 54px;
+}
+
+.stat-row__words {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 30px;
+}
+
+.stat-row__bar {
+    height: 10px;
+    margin-top: 6px;
+    background-color: var(--plate-2);
+    border-top-width: 2px;
+    border-top-color: rgb(11, 13, 16);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(78, 90, 103);
+}
+
+.stat-row__fill {
+    height: 100%;
+    background-color: var(--chalk);
+    border-top-width: 2px;
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(163, 159, 151);
+}
+
+.card {
+    height: 84px;
+    padding: 9px 16px;
+    margin-bottom: 12px;
+    --plate-depth: 6;
+    transition-property: translate;
+    transition-duration: 0.06s;
+}
+
+.card:active {
+    translate: 0 3px;
+}
+
+/* The stripes of a card for something the player does not have stay inside its outline. */
+.card .hatch {
+    left: 3px;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+}
+
+.card__under {
+    flex-direction: row;
+    align-items: center;
+}
+
+.station__names {
+    height: 40px;
+}
+
+.station__power {
+    width: 300px;
+}
+
+.station__schematic {
+    height: 192px;
+    margin-bottom: 8px;
+}
+
+
+.station__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 64px;
+}
+
+.station__footer .button {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+
+/* ---- The pause menu: a column of choices, Resume first, then the controls ---- */
+
+.pause {
+    width: 600px;
+    padding: 32px;
+    --plate-depth: 10;
+}
+
+.pause__choices {
+    margin-top: 12px;
+}
+
+.pause__heading {
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.pause__key {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 34px;
+    border-bottom-width: 1px;
+    border-color: var(--seam);
+}
+
+/* ---- The end of a run ---- */
+
+.gameover {
+    width: 1100px;
+    padding: 0;
+    --plate-depth: 10;
+}
+
+/* The banner is hatched, the pattern for warnings. It is let into the panel: dark along the top
+   and the left, light along the bottom and the right. */
+.gameover__band {
+    height: 156px;
+    margin: 18px 18px 0 18px;
+    overflow: hidden;
+    border-width: 2px;
+    border-color: rgb(11, 13, 16);
+    border-bottom-color: rgb(78, 90, 103);
+    border-right-color: rgb(78, 90, 103);
+    background-color: var(--plate);
+    justify-content: center;
+}
+
+.gameover__headline {
+    padding-left: 30px;
+}
+
+.gameover__title {
+    text-shadow: 0 5px 0 rgba(6, 7, 10, 0.8);
+    font-size: 78px;
+    letter-spacing: 5px;
+    -unity-font-definition: url("Fonts/ChakraPetch-Bold.ttf");
+    color: var(--chalk);
+}
+
+.gameover__rule {
+    height: 4px;
+    margin: 0 18px;
+}
+
+.gameover__line {
+    height: 100%;
+    width: 0;
+    background-color: var(--pulse);
+}
+
+.gameover__body {
+    padding: 24px 32px 24px 32px;
+}
+
+.gameover__who {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.gameover__pair {
+    width: 330px;
+}
+
+.gameover__facts .chip {
+    margin-bottom: 8px;
+}
+
+.gameover__grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.stat {
+    width: 247px;
+    height: 108px;
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    --plate-depth: 6;
+}
+
+.stat__num {
+    font-size: 46px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+    text-shadow: 0 3px 0 rgba(6, 7, 10, 0.75);
+}
+
+.gameover__facts {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+/* ---- Parts as items: rarity, kinds, the Tuner ---- */
+
+/* Five notches, of which as many are filled as the ability is good. */
+.notches {
+    width: 52px;
+    height: 10px;
+    margin: 0 10px 0 4px;
+    flex-shrink: 0;
+}
+
+/* The symbol of a kind of part. */
+.kind-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.archive__kind {
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+}
+
+.tuner__rank {
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+}
+
+.tuner__level {
+    width: 260px;
+    height: 58px;
+    margin-top: 4px;
+}
+
+.tuner__stats {
+    height: 170px;
+    margin-top: 14px;
+}
+
+/* ---- The mark that lights when the game has saved ---- */
+
+.save-mark {
+    position: absolute;
+    right: 34px;
+    bottom: 34px;
+    width: 12px;
+    height: 12px;
+    rotate: 45deg;
+    background-color: var(--pulse);
+}
+
+/* What a door costs, on the prompt. */
+.prompt__price {
+    font-size: 20px;
+    margin: 0 0 0 18px;
+    padding: 0;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+/* ---- The options: one row for each setting ---- */
+
+.option {
+    flex-direction: row;
+    align-items: center;
+    height: 54px;
+    padding: 0 8px 0 18px;
+    margin-top: 10px;
+    --plate-depth: 4;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.option__name {
+    flex-grow: 1;
+    font-size: 15px;
+    letter-spacing: 2px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.option__value {
+    width: 130px;
+    font-size: 16px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    -unity-text-align: middle-center;
+    color: var(--chalk);
+}
+
+.button--small {
+    margin-top: 0;
+    align-self: center;
+}
+
+.button--small .button__face {
+    padding: 4px 13px;
+}
+
+.option__erase {
+    margin-top: 30px;
+}
+
+/* ---- The log of what was picked up: right edge, between the top and the middle ----
+   The box has no size. Its lines hang off its right edge, the newest on top. */
+
+.hud-log {
+    position: absolute;
+    right: 32px;
+    top: 21%;
+}
+
+.log-line {
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    height: 42px;
+    padding: 0 16px 0 8px;
+    transform-origin: right center;
+    --plate-depth: 4;
+}
+
+.log-line__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* A Beat: a splinter of the Pulse. */
+.log-line__gem {
+    width: 11px;
+    height: 11px;
+    margin: 0 15px 0 11px;
+    rotate: 45deg;
+    flex-shrink: 0;
+    background-color: var(--pulse);
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-color: rgb(52, 170, 108);
+}
+
+.log-line__name {
+    font-size: 16px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.log-line__detail {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    white-space: nowrap;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--dust);
+}
+
+.log-line .notches {
+    margin: 0 0 0 12px;
+}
+
+/* ---- A column of kinds under headings: one line for a kind of part, however many there are ---- */
+
+.group-row {
+    flex-direction: row;
+    align-items: center;
+    height: 34px;
+    padding: 0 10px 0 9px;
+    border-left-width: 3px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.group-row:hover {
+    background-color: var(--plate-2);
+}
+
+.group-row--head {
+    padding-left: 0;
+}
+
+.group-row--head:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.group-row--on {
+    background-color: var(--plate-2);
+    border-color: var(--chalk);
+}
+
+.group-row--focus {
+    border-color: var(--pulse);
+}
+
+.group-row__name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 40px;
+    font-size: 16px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--chalk);
+}
+
+.group-row--head .group-row__name {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--dust);
+}
+
+.group-row__count {
+    width: 34px;
+    font-size: 14px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    -unity-text-align: middle-right;
+    color: var(--dust);
+}
+
+.group-row .kind-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
+
+.group-row .tag {
+    margin: 0 4px 0 6px;
+}
+
+/* How many of a kind there are, on its line in a list of kinds. */
+.part__count {
+    margin: 0 10px 0 0;
+}
+
+/* ---- The Mechanic: the machine in the left column ---- */
+
+.mech__names {
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+}
+
+.mech__schematic {
+    height: 186px;
+    margin-bottom: 8px;
+}
+
+.mech__slot {
+    width: 92px;
+    flex-shrink: 0;
+}
+
+.mech__info {
+    height: 220px;
+}
+
+/* ---- The display at the turntable: the machines side by side ---- */
+
+.preset {
+    width: 650px;
+    height: 566px;
+    margin-right: 18px;
+    padding: 20px 26px;
+    --plate-depth: 6;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.preset__under {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 26px;
+}
+
+.preset__schematic {
+    height: 206px;
+    margin: 6px 0 10px 0;
+}
+
+.preset__line {
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+}
+
+.preset__line .label {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.preset__empty {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 30px;
+    letter-spacing: 4px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    -unity-text-align: middle-center;
+    color: var(--dust);
+}
+
+/* ---- Echoes ---- */
+
+/* The Echoes the machine holds: small plates in a row over the Hull bar. */
+.hud-echoes {
+    position: absolute;
+    left: 32px;
+    bottom: 134px;
+    flex-direction: row;
+}
+
+.echo-chip {
+    width: 52px;
+    height: 52px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+    --plate-depth: 4;
+}
+
+.echo-chip__icon {
+    width: 34px;
+    height: 34px;
+}
+
+.echo-chip__count {
+    position: absolute;
+    right: 3px;
+    bottom: 0;
+    font-size: 13px;
+    -unity-font-definition: url("Fonts/ChakraPetch-SemiBold.ttf");
+    color: var(--pulse);
+    text-shadow: 0 1px 0 rgba(6, 7, 10, 0.9);
+}
+
+/* The choice of an Echo: a word over three cards. */
+.echo-pick {
+    align-items: center;
+}
+
+.echo-pick__row {
+    flex-direction: row;
+    margin-top: 28px;
+}
+
+.echo-card {
+    width: 330px;
+    height: 400px;
+    margin: 0 14px;
+    padding: 30px 26px;
+    align-items: center;
+    --plate-depth: 8;
+    transition-property: translate;
+    transition-duration: 0.07s;
+}
+
+.echo-card:active {
+    translate: 0 2px;
+}
+
+.echo-card__icon {
+    width: 132px;
+    height: 132px;
+    margin-bottom: 22px;
+}
+
+.echo-card__name {
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.echo-card__chips {
+    flex-direction: row;
+    justify-content: center;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.echo-card__chips .chip {
+    margin-right: 0;
+}
+
+.echo-card__text {
+    font-size: 18px;
+    color: var(--chalk);
+    white-space: normal;
+    -unity-text-align: upper-center;
+}
+
+/* The two numbers in the top right corner of the Archivist's screen. */
+.station__purses {
+    flex-direction: row;
+}
+
+.station__purses .station__purse {
+    margin-left: 48px;
+}

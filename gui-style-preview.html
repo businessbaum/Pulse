@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GUI style preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --soot:#14171C; --plate:#1F242B; --plate-2:#2A313A; --seam:#3D4752;
+  --chalk:#E8E4DA; --dust:#9AA3AD; --pulse:#5CF2A0;
+  --heat:#FF5A3C; --shock:#FFD93B; --cryo:#5CD6FF; --oil:#A77BFF; --magnet:#FF5FB4;
+  --display:"Chakra Petch","Bahnschrift","Segoe UI",sans-serif;
+  --body:"Barlow","Segoe UI",system-ui,sans-serif;
+  --hatch:repeating-linear-gradient(135deg,var(--plate) 0 6px,var(--plate-2) 6px 12px);
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--soot);color:var(--chalk);font:18px/1.45 var(--body);padding:40px 16px 72px}
+main{max-width:1080px;margin:0 auto;display:grid;gap:48px}
+h1{font:700 40px/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+h1+p{color:var(--dust);margin-top:8px}
+h2{font:600 16px/1 var(--display);text-transform:uppercase;letter-spacing:.12em;color:var(--dust);margin-bottom:16px}
+.note{color:var(--dust);font-size:14px;margin-top:12px;max-width:70ch}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.num{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+
+/* plate: two cut corners, 2px outline */
+.plate{--c:12px;--b:var(--seam);--bg:var(--plate);position:relative;isolation:isolate;padding:16px}
+.plate::before,.plate::after{content:"";position:absolute;z-index:-1}
+.plate::before{inset:0;background:var(--b);
+  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c))}
+.plate::after{--i:calc(var(--c) - 1px);inset:2px;background:var(--bg);
+  clip-path:polygon(var(--i) 0,100% 0,100% calc(100% - var(--i)),calc(100% - var(--i)) 100%,0 100%,0 var(--i))}
+
+/* swatches */
+.sw{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(112px,1fr))}
+.sw .plate{padding:10px}
+.sw i{display:block;height:44px;margin-bottom:10px}
+.sw b{display:block;font:600 14px/1.2 var(--display);text-transform:uppercase;letter-spacing:.08em}
+.sw span{font-size:14px;color:var(--dust)}
+
+/* type */
+.type{display:grid;gap:12px}
+.t-display{font:700 40px/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.t-title{font:600 24px/1.2 var(--display)}
+.t-label{font:600 14px/1 var(--display);text-transform:uppercase;letter-spacing:.12em;color:var(--dust)}
+.t-small{font-size:14px;color:var(--dust)}
+
+/* buttons */
+.btn{--c:6px;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:0;background:none;cursor:pointer;
+  font:600 16px/1 var(--display);text-transform:uppercase;letter-spacing:.1em;color:var(--chalk)}
+.btn.primary{--b:var(--pulse);--bg:var(--pulse);color:var(--soot)}
+.btn.focus{--b:var(--pulse);--bg:var(--plate-2)}
+.btn.off{--bg:var(--hatch);color:var(--dust);cursor:not-allowed}
+kbd{font:600 12px/1 var(--display);border:2px solid currentColor;padding:3px 6px;opacity:.75}
+
+/* chips */
+.chip{--c:5px;display:inline-flex;align-items:center;gap:6px;padding:6px 10px 6px 8px;
+  font:600 13px/1 var(--display);text-transform:uppercase;letter-spacing:.08em}
+.chip svg{width:14px;height:14px;fill:var(--b)}
+.chip.plain{padding-left:10px}
+
+/* schematic */
+.schem{padding:8px 8px 4px}
+.schem svg{display:block;width:100%;height:auto}
+.schem text{font:600 11px var(--display);letter-spacing:.1em;fill:var(--dust);text-anchor:middle}
+.wire{stroke:var(--seam);stroke-width:3;fill:none}
+.wire.live{stroke:var(--pulse)}
+.slot{fill:var(--plate);stroke:var(--chalk);stroke-width:2}
+.slot.empty{stroke:var(--seam);stroke-dasharray:5 4}
+.legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:14px;font-size:14px;color:var(--dust)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend svg{width:18px;height:18px;fill:none;stroke:var(--chalk);stroke-width:2}
+
+/* bars */
+.hud{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-end}
+.stat{display:grid;gap:6px}
+.bar{width:240px;background:var(--plate-2)}
+.bar i{display:block;height:100%;background:var(--chalk)}
+.bar.shield{height:5px}.bar.shield i{background:var(--dust)}
+.bar.hull{height:12px}
+.pips{display:flex;gap:4px}
+.pips i{width:12px;height:12px;border:2px solid var(--pulse)}
+.pips i.on{background:var(--pulse)}
+.coin{display:inline-flex;align-items:center;gap:8px;font-size:20px}
+.coin i{width:11px;height:11px;transform:rotate(45deg);background:var(--pulse)}
+.coin.scrap i{transform:none;background:var(--dust)}
+
+/* cards */
+.card{display:grid;gap:12px;align-content:start;padding:18px}
+.card.focus{--b:var(--pulse);--bg:var(--plate-2)}
+.card header{display:flex;align-items:center;gap:8px}
+.card header svg{width:14px;height:14px;fill:none;stroke:var(--dust);stroke-width:2}
+.notch{margin-left:auto;display:flex;gap:5px}
+.notch i{width:7px;height:7px;transform:rotate(45deg);background:var(--chalk)}
+.card p{font-size:16px;min-height:3em}
+.card footer{display:flex;align-items:center;justify-content:space-between;color:var(--dust);font-size:14px}
+
+/* reaction notation */
+.rx{display:flex;flex-wrap:wrap;align-items:center;gap:0;margin-bottom:14px}
+.rx .w{width:28px;height:3px;background:var(--pulse)}
+.rx .w.idle{background:var(--seam)}
+.result{--c:6px;padding:9px 16px;font:600 15px/1 var(--display);text-transform:uppercase;letter-spacing:.1em}
+.result.unknown{--bg:var(--hatch);color:var(--dust)}
+
+/* lamps */
+.lamp{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--dust)}
+.lamp i{width:12px;height:12px;background:var(--seam)}
+.lamp.steady i{background:var(--chalk)}
+.lamp.new i{background:var(--pulse);animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.lamp.new i{animation:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="g-heat" viewBox="0 0 16 16"><path d="M8 1.5 14.5 14h-13z"/></symbol>
+  <symbol id="g-shock" viewBox="0 0 16 16"><path d="M9.5 1 3 9h3.6L5.5 15 13 6.5H9z"/></symbol>
+  <symbol id="g-cryo" viewBox="0 0 16 16"><path d="M8 1l6 3.5v7L8 15l-6-3.5v-7z"/></symbol>
+  <symbol id="g-oil" viewBox="0 0 16 16"><path d="M8 1C8 1 3 7.4 3 10.4a5 5 0 0 0 10 0C13 7.4 8 1 8 1z"/></symbol>
+  <symbol id="g-magnet" viewBox="0 0 16 16"><path d="M2.5 2h3.4v7.2a2.1 2.1 0 0 0 4.2 0V2h3.4v7.2a5.5 5.5 0 0 1-11 0z"/></symbol>
+  <symbol id="g-kinetic" viewBox="0 0 16 16"><circle cx="8" cy="8" r="4.5"/></symbol>
+</svg>
+
+<main>
+  <header>
+    <h1>Plate and Pulse</h1>
+    <p>GUI style preview. The rules are in gui-style.md.</p>
+  </header>
+
+  <section>
+    <h2>Colours</h2>
+    <div class="sw">
+      <div class="plate"><i style="background:var(--soot);outline:2px solid var(--seam);outline-offset:-2px"></i><b>Soot</b><span>#14171C · background</span></div>
+      <div class="plate"><i style="background:var(--plate-2)"></i><b>Plate 2</b><span>#2A313A · raised</span></div>
+      <div class="plate"><i style="background:var(--seam)"></i><b>Seam</b><span>#3D4752 · outlines</span></div>
+      <div class="plate"><i style="background:var(--dust)"></i><b>Dust</b><span>#9AA3AD · labels</span></div>
+      <div class="plate"><i style="background:var(--chalk)"></i><b>Chalk</b><span>#E8E4DA · text, Hull</span></div>
+      <div class="plate"><i style="background:var(--pulse)"></i><b>Pulse</b><span>#5CF2A0 · the accent</span></div>
+    </div>
+    <div class="sw" style="margin-top:16px">
+      <div class="plate"><i style="background:var(--heat)"></i><b>Heat</b><span>#FF5A3C</span></div>
+      <div class="plate"><i style="background:var(--shock)"></i><b>Shock</b><span>#FFD93B</span></div>
+      <div class="plate"><i style="background:var(--cryo)"></i><b>Cryo</b><span>#5CD6FF</span></div>
+      <div class="plate"><i style="background:var(--oil)"></i><b>Oil</b><span>#A77BFF</span></div>
+      <div class="plate"><i style="background:var(--magnet)"></i><b>Magnet</b><span>#FF5FB4</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Type</h2>
+    <div class="type">
+      <div class="t-display">Roundhouse</div>
+      <div class="t-title">Flamethrower <span class="num" style="color:var(--dust)">Mk II</span></div>
+      <div class="t-label">Weapon · Hardpoint</div>
+      <div>Short cone of fire. Applies Heat to everything it touches.</div>
+      <div class="t-small">Smallest size allowed. Used for hints and footnotes only.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Schematic</h2>
+    <div class="plate schem">
+      <svg viewBox="0 0 640 236" role="img" aria-label="Crawler frame with three hardpoints, two bays and three support slots">
+        <path class="wire" d="M190 122V52"/>
+        <path class="wire" d="M320 122h130"/>
+        <path class="wire live" d="M70 122h250"/>
+        <path class="wire live" d="M450 122h120M450 122V52"/>
+
+        <rect class="slot" x="48" y="100" width="44" height="44"/>
+        <use href="#g-heat" x="59" y="111" width="22" height="22" fill="var(--heat)"/>
+        <text x="70" y="166">FRONT</text>
+
+        <circle class="slot" cx="190" cy="122" r="22"/>
+        <circle cx="190" cy="122" r="9" fill="none" stroke="var(--chalk)" stroke-width="2"/>
+        <text x="190" y="166">BAY 1</text>
+
+        <rect class="slot" x="298" y="100" width="44" height="44"/>
+        <use href="#g-oil" x="309" y="111" width="22" height="22" fill="var(--oil)"/>
+        <text x="320" y="166">TURRET</text>
+
+        <circle class="slot" cx="450" cy="122" r="22"/>
+        <use href="#g-cryo" x="439" y="111" width="22" height="22" fill="none" stroke="var(--cryo)" stroke-width="1.6"/>
+        <text x="450" y="166">BAY 2</text>
+
+        <rect class="slot" x="548" y="100" width="44" height="44"/>
+        <use href="#g-kinetic" x="559" y="111" width="22" height="22" fill="var(--chalk)"/>
+        <text x="570" y="166">REAR</text>
+
+        <path class="slot empty" d="M190 8l22 22-22 22-22-22z"/>
+        <text x="258" y="34">SUPPORT A</text>
+
+        <path class="slot" d="M450 8l22 22-22 22-22-22z"/>
+        <path d="M442 24l6 6-6 6M451 24l6 6-6 6" fill="none" stroke="var(--chalk)" stroke-width="2"/>
+        <text x="518" y="34">SUPPORT B</text>
+
+        <rect class="slot" x="150" y="194" width="80" height="24"/>
+        <text x="190" y="210" style="fill:var(--chalk)">WHEELS</text>
+        <text x="112" y="210">DRIVE</text>
+
+        <path class="slot empty" d="M320 184l22 22-22 22-22-22z"/>
+        <text x="388" y="210">SUPPORT C</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><svg viewBox="0 0 18 18"><rect x="2" y="2" width="14" height="14"/></svg>Hardpoint</span>
+      <span><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/></svg>Bay</span>
+      <span><svg viewBox="0 0 18 18"><path d="M9 1l8 8-8 8-8-8z"/></svg>Support slot</span>
+      <span><svg viewBox="0 0 18 18"><rect x="1" y="5" width="16" height="8"/></svg>Drive slot</span>
+    </div>
+    <p class="note">A wire is green only while its system changes something at the other end. Here the Gyro in Bay 1 acts on both weapons. The Cryo Feed in Bay 2 acts on the Rear weapon and the Booster, but not on the Turret, which already has a state.</p>
+  </section>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="row">
+      <button class="plate btn primary">Start run <kbd>A</kbd></button>
+      <button class="plate btn">Rewire</button>
+      <button class="plate btn focus">Focused</button>
+      <button class="plate btn off" disabled>Locked</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>State chips</h2>
+    <div class="row">
+      <span class="plate chip" style="--b:var(--heat)"><svg><use href="#g-heat"/></svg>Heat</span>
+      <span class="plate chip" style="--b:var(--shock)"><svg><use href="#g-shock"/></svg>Shock</span>
+      <span class="plate chip" style="--b:var(--cryo)"><svg><use href="#g-cryo"/></svg>Cryo</span>
+      <span class="plate chip" style="--b:var(--oil)"><svg><use href="#g-oil"/></svg>Oil</span>
+      <span class="plate chip" style="--b:var(--magnet)"><svg><use href="#g-magnet"/></svg>Magnet</span>
+      <span class="plate chip" style="--b:var(--dust)"><svg><use href="#g-kinetic"/></svg>Kinetic</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bars and counters</h2>
+    <div class="hud">
+      <div class="stat">
+        <span class="t-label">Shield · Hull</span>
+        <div class="bar shield"><i style="width:45%"></i></div>
+        <div class="bar hull"><i style="width:68%"></i></div>
+      </div>
+      <div class="stat">
+        <span class="t-label">Power <span class="num" style="color:var(--chalk)">7 / 10</span></span>
+        <div class="pips"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+      <span class="coin num"><i></i>128</span>
+      <span class="coin scrap num"><i></i>2,340</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Module cards</h2>
+    <div class="grid">
+      <article class="plate card">
+        <header><svg viewBox="0 0 14 14"><rect x="1" y="1" width="12" height="12"/></svg><span class="t-label">Weapon</span><span class="notch"><i></i></span></header>
+        <div class="t-title">Flamethrower</div>
+        <div class="row" style="gap:8px"><span class="plate chip plain">Beam</span><span class="plate chip" style="--b:var(--heat)"><svg><use href="#g-heat"/></svg>Heat</span></div>
+        <p>Short cone of fire. Applies Heat to everything it touches.</p>
+        <footer><span class="pips"><i class="on"></i><i class="on"></i></span><span>Power 2</span></footer>
+      </article>
+      <article class="plate card focus">
+        <header><svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="6"/></svg><span class="t-label">System</span><span class="notch"><i></i><i></i></span></header>
+        <div class="t-title">Splitter</div>
+        <div class="row" style="gap:8px"><span class="plate chip plain">Shaper</span></div>
+        <p>Wired weapons split: shots fork, beams refract, zones gain a ring.</p>
+        <footer><span class="pips"><i class="on"></i></span><span>Power 1</span></footer>
+      </article>
+      <article class="plate card">
+        <header><svg viewBox="0 0 14 14"><path d="M1 7h3l2-5 2 10 2-5h3"/></svg><span class="t-label">Echo</span><span class="notch"><i></i><i></i><i></i></span></header>
+        <div class="t-title">Second Beat</div>
+        <div class="row" style="gap:8px"><span class="plate chip plain" style="--b:var(--pulse)">Pulse</span></div>
+        <p>Every reaction triggers twice. The second is half as strong.</p>
+        <footer><span>No slot</span><span>No Power</span></footer>
+      </article>
+    </div>
+    <p class="note">Rarity is the number of notches at the top right, never a colour. The focused card has the green outline.</p>
+  </section>
+
+  <section>
+    <h2>Reaction notation</h2>
+    <div class="rx">
+      <span class="plate chip" style="--b:var(--heat)"><svg><use href="#g-heat"/></svg>Heat</span><span class="w"></span>
+      <span class="plate chip" style="--b:var(--oil)"><svg><use href="#g-oil"/></svg>Oil</span><span class="w"></span>
+      <span class="plate result" style="--b:var(--pulse)">Firestorm</span>
+    </div>
+    <div class="rx">
+      <span class="plate chip" style="--b:var(--cryo)"><svg><use href="#g-cryo"/></svg>Cryo</span><span class="w idle"></span>
+      <span class="plate chip" style="--b:var(--magnet)"><svg><use href="#g-magnet"/></svg>Magnet</span><span class="w idle"></span>
+      <span class="plate result unknown">? ? ?</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lamps</h2>
+    <div class="row" style="gap:32px">
+      <span class="lamp"><i></i>Dormant</span>
+      <span class="lamp steady"><i></i>Nothing new</span>
+      <span class="lamp new"><i></i>Something new</span>
+    </div>
+    <p class="note">The pulsing lamp is the only moving element on this page.</p>
+  </section>
+</main>
+</body>
+</html>

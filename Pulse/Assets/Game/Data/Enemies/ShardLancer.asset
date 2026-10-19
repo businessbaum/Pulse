@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef221c9cccb3bf40b51cf65a090dfe8, type: 3}
+  m_Name: ShardLancer
+  m_EditorClassIdentifier: Pulse.Runtime::Pulse.EnemyDef
+  displayName: Shard Lancer
+  hp: 24
+  speed: 2.8
+  radius: 0.5
+  armor: 0
+  contactDamage: 8
+  behaviour: 6
+  packSize: 1
+  trait: Stands off and shoots along the line it shows.
+  bossTrait: Fires a fan of five, twice in a row.
+  miniBossName: Shard Volley
+  bossName: Icicle Battery
+  mesh: {fileID: -2372994558000725581, guid: 6bd5449737f607c4881ab284f2dba5c0, type: 3}
+  height: 1.6
+  body: {fileID: 2100000, guid: 81b861b7de19f6a4fbc771d9927b1335, type: 2}
+  plate: {fileID: 2100000, guid: 7b922aebef744c44c92f8b8743f9f746, type: 2}
+  glow: {fileID: 2100000, guid: 8021f76ad507fec48a6877892054af53, type: 2}
+  wobble: 0
+  legMesh: {fileID: -1265467902348625186, guid: 3402721a868ea46439f7145e63906323, type: 3}
+  legSpacing: 0.14
+  hipHeight: 0.5
